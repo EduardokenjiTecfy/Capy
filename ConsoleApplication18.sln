@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteOcrAPIGOOGLE", "ConsoleApplication18\TesteOcrAPIGOOGLE.csproj", "{35ED05A8-59B4-499B-91CE-A6CB599A8712}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcrTesseract", "OcrTesseract\OcrTesseract.csproj", "{B6F00B32-1C05-4699-8E7F-206A05AB8940}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteTesseract", "TesteTesseract\TesteTesseract.csproj", "{C80D6310-F4E6-4876-A069-DB41C14EA90D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35ED05A8-59B4-499B-91CE-A6CB599A8712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35ED05A8-59B4-499B-91CE-A6CB599A8712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35ED05A8-59B4-499B-91CE-A6CB599A8712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35ED05A8-59B4-499B-91CE-A6CB599A8712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F00B32-1C05-4699-8E7F-206A05AB8940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F00B32-1C05-4699-8E7F-206A05AB8940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F00B32-1C05-4699-8E7F-206A05AB8940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F00B32-1C05-4699-8E7F-206A05AB8940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C80D6310-F4E6-4876-A069-DB41C14EA90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C80D6310-F4E6-4876-A069-DB41C14EA90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C80D6310-F4E6-4876-A069-DB41C14EA90D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C80D6310-F4E6-4876-A069-DB41C14EA90D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
