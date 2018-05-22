@@ -1,0 +1,65 @@
+﻿<Job mc:Ignorable="sap sap2010 sads" DisplayName="Form Data Extraction Sample" sap2010:WorkflowViewState.IdRef="Job_1" InputXML="(XML content)"
+ xmlns="clr-namespace:Nuance.OmniPage.CSDK.IproPlus.JobDesign.BuiltIn;assembly=Nuance.OmniPageSDK.IproPlus.JobDesign.BuiltIn"
+ xmlns:ct="clr-namespace:Converters.Text;assembly=Converters"
+ xmlns:local="clr-namespace:;assembly=CSDK"
+ xmlns:local1="clr-namespace:;assembly=Converters"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:nocij="clr-namespace:Nuance.OmniPage.CSDK.IproPlus.JobDesign;assembly=Nuance.OmniPageSDK.IproPlus.JobDesign"
+ xmlns:nocijbc="clr-namespace:Nuance.OmniPage.CSDK.IproPlus.JobDesign.BuiltIn.CSDK;assembly=Nuance.OmniPageSDK.IproPlus.JobDesign.BuiltIn"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Job.Activities>
+    <Workflow Converter="Converters.Text.DCsv" DisplayName="Extracts data from 2 form using a form template library" sap2010:WorkflowViewState.IdRef="Workflow_1" InputXML="(XML content)" Output="%USERPROFILE%\My Documents\ExtractedFormData.csv" OutputXML="(XML content)" Type="CWFF_LOADIMG, CWFF_ZONEIMG, CWFF_RECOGNIZE, CWFF_EXPORTDOC" XMLOutput="%USERPROFILE%\My Documents\ExtractedFormData.xml">
+      <Workflow.Inputs>
+        <scg:List x:TypeArguments="FileName" Capacity="4">
+          <FileName>.\AAG_Dependent_Filled_Scan_BW.pdf</FileName>
+          <FileName>.\AAG_Dependent_Filled_Scan_BW-2.pdf</FileName>
+        </scg:List>
+      </Workflow.Inputs>
+      <Workflow.Parameters>
+        <nocijbc:Parameters>
+          <nocijbc:Parameters.Parameter>
+            <local:Parameters SP_LDI_LANGUAGES="{x:Null}" SP_RCI_BARTYPES="{x:Null}" SP_RCI_FONTNAMES="{x:Null}" SP_RCI_LANGUAGES="{x:Null}" SP_RCI_PROFDICT="{x:Null}" SP_ATM_FALLBACKONFAIL="False" SP_ATM_MANZONE="False" SP_ATM_POPBKGNDZONES="False" SP_ATM_SKIPZONELESSPAGE="False" SP_ATM_TEMPFILENAME=".\FormTemplate.ftl" SP_ATM_TRYASFORM="True" SP_EXP_APPENDPROMPT="False" SP_EXP_BARCODEPAGEIMAGEINDEX="1" SP_EXP_BARCODESEPARATION="False" SP_EXP_BARCODETEXT="" SP_EXP_CONVERTERNAME="Converters.Text.RTF2000" SP_EXP_CONVERTPROMPT="True" SP_EXP_FILEOPTIONS="CONV_FILEOPTIONS_1FILE" SP_EXP_FORMATTINGLEVEL="CONV_FORMATLEVEL_RFP" SP_EXP_GENERATEOUTPUT="True" SP_EXP_HASFOLDERNOTES="False" SP_EXP_HASPPLAUNCH="False" SP_EXP_HASPROMPTFORDEST="True" SP_EXP_HASSAVEANDLAUNCH="False" SP_EXP_HASTIMESTAMP="False" SP_EXP_INCLUDEBARCODESEPARATOR="False" SP_EXP_OVERWRITEPROMPT="False" SP_EXP_PAGERANGE="CONV_PAGERANGE_ALL" SP_EXP_PASSWORDPROMPT="True" SP_EXP_POSTBARCODESEPARATION="False" SP_EXP_PROMPTPATH="C:\Users\Bartha_Laszlo\Documents" SP_EXP_SKIPSINGLEOUTPUTNUMBERING="False" SP_EXP_TIMESTAMP="" SP_EXP_TIMESTAMPTYPE="0" SP_LDI_ADVANCED="False" SP_LDI_AUTOCROP="False" SP_LDI_BLANKPAGESENSITIVITY="50" SP_LDI_DESKEW="True" SP_LDI_DESPECKLE="True" SP_LDI_DESPECKLEDITHERING="True" SP_LDI_DIGITALCAMERA="False" SP_LDI_DOPREVIEW="True" SP_LDI_DOUBLEPAGE="False" SP_LDI_DOWNSAMPLE="False" SP_LDI_IGNOREPDFTAGS="False" SP_LDI_LEGALPLEADING="False" SP_LDI_NEWPAGEINDEX="0" SP_LDI_NEWPAGEPOS="NPP_AFTER_LAST" SP_LDI_OPENPDFASIMAGE="False" SP_LDI_PAGEROTATION="ROT_AUTO" SP_LDI_PDFPASSWORD="" SP_LDI_PROMPTFORINPUT="True" SP_LDI_PROMPTPATH="C:\Users\Bartha_Laszlo\Documents" SP_LDI_REMOVEBLANKPAGES="False" SP_LDI_REMOVEBORDER="False" SP_LDI_REMOVEPUNCHHOLES="False" SP_LDI_SHOWOPENDLG="True" SP_LDI_SINGLESEL="False" SP_RCI_ADDITIONALCHARS="" SP_RCI_AUTODETECTLANG="False" SP_RCI_AUTOLANGUAGE="False" SP_RCI_CUSTOMLAYOUT="263172" SP_RCI_INSERTFULLPAGEZONE="False" SP_RCI_LOOKFORHEADERFOOTER="False" SP_RCI_LOOKFORHYPERLINK="True" SP_RCI_OPTIMIZESPEED="False" SP_RCI_PAGELAYOUT="PAGELAYOUT_AUTO" SP_RCI_PRESERVCOLORGRAPH="True" SP_RCI_PRESERVCOLORTEXT="True" SP_RCI_REJECTCHARS="~" SP_RCI_RERECOGNIZE="False" SP_RCI_USEPDFFONTS="True" SP_RCI_USERDICT="" />
+          </nocijbc:Parameters.Parameter>
+        </nocijbc:Parameters>
+      </Workflow.Parameters>
+      <Workflow.Properties>
+        <nocijbc:Properties>
+          <nocijbc:Properties.Converters>
+            <local1:Converters Converters_Image_TIFF="{x:Null}" Converters_Text_PDF="{x:Null}" Converters_Text_RTF2000="{x:Null}" Converters_Text_Text="{x:Null}">
+              <local1:Converters.Converters_Text_DCsv>
+                <ct:DCsv Fields="{x:Null}" CodePage="Auto" CommentSign="" FileOption="OneFileForAll" OutputMode="IgnoreAll" PageBreak="" RecordSeparator="Page" WriteFileHeader="True" />
+              </local1:Converters.Converters_Text_DCsv>
+            </local1:Converters>
+          </nocijbc:Properties.Converters>
+        </nocijbc:Properties>
+      </Workflow.Properties>
+      <Workflow.RuntimeErrors>
+        <scg:List x:TypeArguments="nocij:RuntimeError" Capacity="0" />
+      </Workflow.RuntimeErrors>
+      <Workflow.Settings>
+        <nocijbc:Settings>
+          <nocijbc:Settings.Setting>
+            <local:Setting Formatter="{x:Null}" Global="{x:Null}" Kernel="{x:Null}" Processing="{x:Null}" />
+          </nocijbc:Settings.Setting>
+        </nocijbc:Settings>
+      </Workflow.Settings>
+      <Workflow.StartError>
+        <nocij:ExecutionError Error="0" ErrorString="Successful operation, no error. (REC_OK)" />
+      </Workflow.StartError>
+    </Workflow>
+  </Job.Activities>
+  <Job.StartError>
+    <nocij:ExecutionError Error="0" ErrorString="Successful operation, no error. (REC_OK)" />
+  </Job.StartError>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Workflow_1" sap:VirtualizedContainerService.HintSize="483.2,126.4" />
+      <sap2010:ViewStateData Id="Job_1" sap:VirtualizedContainerService.HintSize="505.6,251.2" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+  <sads:DebugSymbol.Symbol>d2FFOlxUZWFtU2VydmVyXENTREsxNlxNQUlOXERldmVsb3BtZW50XFRvb2xzXE9QU1xTZXJ2aWNlRGVtb1xDU0RLU2FtcGxlc1xGb3JtRGF0YUV4dHJhY3Rpb24ub2Nyam9iAgEBQQcBAQ8FNRABAg==</sads:DebugSymbol.Symbol>
+</Job>
