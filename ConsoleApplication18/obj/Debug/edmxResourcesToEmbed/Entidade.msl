@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PocOcrModelStoreContainer" CdmEntityContainer="PocOcrEntities">
+    <EntitySetMapping Name="CONFIGURACAO">
+      <EntityTypeMapping TypeName="PocOcrModel.CONFIGURACAO">
+        <MappingFragment StoreEntitySet="CONFIGURACAO">
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Device">
+      <EntityTypeMapping TypeName="PocOcrModel.Device">
+        <MappingFragment StoreEntitySet="Device">
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Profile" ColumnName="Profile" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documento">
+      <EntityTypeMapping TypeName="PocOcrModel.Documento">
+        <MappingFragment StoreEntitySet="Documento">
+          <ScalarProperty Name="column_name" ColumnName="column_name" />
+          <ScalarProperty Name="PalavraId" ColumnName="PalavraId" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="NomeDocumento" ColumnName="NomeDocumento" />
+          <ScalarProperty Name="ModeloId" ColumnName="ModeloId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogOcr">
+      <EntityTypeMapping TypeName="PocOcrModel.LogOcr">
+        <MappingFragment StoreEntitySet="LogOcr">
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Motor" ColumnName="Motor" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modelo">
+      <EntityTypeMapping TypeName="PocOcrModel.Modelo">
+        <MappingFragment StoreEntitySet="Modelo">
+          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrientacaoDocumento">
+      <EntityTypeMapping TypeName="PocOcrModel.OrientacaoDocumento">
+        <MappingFragment StoreEntitySet="OrientacaoDocumento">
+          <ScalarProperty Name="QrCode" ColumnName="QrCode" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="Regex" ColumnName="Regex" />
+          <ScalarProperty Name="SomenteNumeros" ColumnName="SomenteNumeros" />
+          <ScalarProperty Name="Tamanho" ColumnName="Tamanho" />
+          <ScalarProperty Name="Palavra" ColumnName="Palavra" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="IdModelo" ColumnName="IdModelo" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="y" ColumnName="y" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PALAVRA_ORIENTACAO">
+      <EntityTypeMapping TypeName="PocOcrModel.PALAVRA_ORIENTACAO">
+        <MappingFragment StoreEntitySet="PALAVRA_ORIENTACAO">
+          <ScalarProperty Name="IDREGISTRO" ColumnName="IDREGISTRO" />
+          <ScalarProperty Name="IDDOCUMENTO" ColumnName="IDDOCUMENTO" />
+          <ScalarProperty Name="IDORIENTACAO" ColumnName="IDORIENTACAO" />
+          <ScalarProperty Name="IDPALAVRA" ColumnName="IDPALAVRA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Palavras">
+      <EntityTypeMapping TypeName="PocOcrModel.Palavras">
+        <MappingFragment StoreEntitySet="Palavras">
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="Ancora" ColumnName="Ancora" />
+          <ScalarProperty Name="Contem" ColumnName="Contem" />
+          <ScalarProperty Name="Palavra" ColumnName="Palavra" />
+          <ScalarProperty Name="IdModelo" ColumnName="IdModelo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROJETO">
+      <EntityTypeMapping TypeName="PocOcrModel.PROJETO">
+        <MappingFragment StoreEntitySet="PROJETO">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ConfiguracaoID" ColumnName="ConfiguracaoID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROJETO_MODELO">
+      <EntityTypeMapping TypeName="PocOcrModel.PROJETO_MODELO">
+        <MappingFragment StoreEntitySet="PROJETO_MODELO">
+          <ScalarProperty Name="MODELO_ID" ColumnName="MODELO_ID" />
+          <ScalarProperty Name="PROJETO_ID" ColumnName="PROJETO_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="PocOcrModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PocOcrModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Regex_Extracao">
+      <EntityTypeMapping TypeName="PocOcrModel.Tipo_Regex_Extracao">
+        <MappingFragment StoreEntitySet="Tipo_Regex_Extracao">
+          <ScalarProperty Name="ordem" ColumnName="ordem" />
+          <ScalarProperty Name="IdOrientacaoModelo" ColumnName="IdOrientacaoModelo" />
+          <ScalarProperty Name="IdProjetoModelo" ColumnName="IdProjetoModelo" />
+          <ScalarProperty Name="TipoExtracaoId" ColumnName="TipoExtracaoId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoExtracao">
+      <EntityTypeMapping TypeName="PocOcrModel.TipoExtracao">
+        <MappingFragment StoreEntitySet="TipoExtracao">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Regex" ColumnName="Regex" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

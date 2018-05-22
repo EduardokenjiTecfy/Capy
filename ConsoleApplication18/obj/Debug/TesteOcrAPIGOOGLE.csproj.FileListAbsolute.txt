@@ -1,0 +1,253 @@
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\grpc_csharp_ext.x86.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\grpc_csharp_ext.x64.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\libgrpc_csharp_ext.x86.so
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\libgrpc_csharp_ext.x64.so
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\libgrpc_csharp_ext.x86.dylib
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\libgrpc_csharp_ext.x64.dylib
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\x64\liblept172.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\x64\libtesseract304.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\x86\liblept172.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\x86\libtesseract304.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\ConsoleApplication18.exe.config
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\ConsoleApplication18.exe
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\ConsoleApplication18.pdb
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\DataMatrix.net.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Emgu.CV.UI.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Emgu.CV.World.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\EntityFramework.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.CommonProtos.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.Gax.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.Gax.Grpc.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.Auth.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.Core.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Cloud.Vision.V1.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Protobuf.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Grpc.Auth.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Grpc.Core.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.Modules.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.SQLite.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.Wpf.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.Cmp.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.Jb2.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.Png.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.Tif.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Demos.Dialogs.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Documents.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Documents.Raster.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Drawing.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.DocumentWriters.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.Ocr.Advantage.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.Ocr.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\log4net.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.AspNet.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.Metadata.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.ArgTypes.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.CAPI.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.Objects.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPageSDK.IproPlus.Marshaler.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPageSDK.ToolBoxes.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\RecPDFNet.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Tesseract.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\ZedGraph.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Annotations.Core.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Barcode.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Caching.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Svg.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Effects.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Core.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Color.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Utilities.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPageSDK.IproPlus.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Vector.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ColorConversion.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Emgu.CV.World.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\EntityFramework.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.CommonProtos.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.Gax.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.Gax.Grpc.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.Auth.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.Core.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Cloud.Vision.V1.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Protobuf.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Grpc.Auth.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Grpc.Core.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.Modules.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.SQLite.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.Wpf.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.dll.config
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Documents.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Drawing.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.DocumentWriters.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.Ocr.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\log4net.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Dynamic.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.AspNet.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.Metadata.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.ArgTypes.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.CAPI.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.Objects.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPageSDK.ToolBoxes.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Tesseract.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Barcode.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Caching.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Svg.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Effects.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Core.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Color.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPageSDK.IproPlus.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ColorConversion.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\obj\Debug\ConsoleApplication18.ProjectInstaller.resources
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\obj\Debug\TesteOcrAPIGOOGLE.csproj.GenerateResource.Cache
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\obj\Debug\TesteOcrAPIGOOGLE.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\obj\Debug\ConsoleApplication18.exe
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\obj\Debug\ConsoleApplication18.pdb
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\ConsoleApplication18\obj\Debug\TesteOcrAPIGOOGLE.csprojResolveAssemblyReference.cache
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\grpc_csharp_ext.x86.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\grpc_csharp_ext.x64.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\libgrpc_csharp_ext.x86.so
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\libgrpc_csharp_ext.x64.so
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\libgrpc_csharp_ext.x86.dylib
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\libgrpc_csharp_ext.x64.dylib
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\x64\liblept172.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\x64\libtesseract304.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\x86\liblept172.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\x86\libtesseract304.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\ConsoleApplication18.exe.config
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\ConsoleApplication18.exe
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\ConsoleApplication18.pdb
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\DataMatrix.net.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\EntityFramework.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\EntityFramework.SqlServer.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.CommonProtos.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.Gax.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.Gax.Grpc.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.Auth.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.Core.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.PlatformServices.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Cloud.Vision.V1.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Protobuf.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Grpc.Auth.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Grpc.Core.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.Modules.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.SQLite.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.Wpf.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.Cmp.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.Jb2.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.Png.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.Tif.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Demos.Dialogs.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Documents.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Documents.Raster.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Drawing.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.DocumentWriters.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.Ocr.Advantage.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.Ocr.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\log4net.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Dynamic.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.AspNet.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.Metadata.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Newtonsoft.Json.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.ArgTypes.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.CAPI.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.Objects.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPageSDK.IproPlus.Marshaler.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPageSDK.ToolBoxes.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\RecPDFNet.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Tesseract.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Annotations.Core.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Barcode.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Caching.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Svg.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Effects.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Core.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Color.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Utilities.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPageSDK.IproPlus.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Vector.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ColorConversion.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\EntityFramework.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\EntityFramework.SqlServer.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.CommonProtos.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.Gax.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Api.Gax.Grpc.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.Auth.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Apis.Core.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Cloud.Vision.V1.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Google.Protobuf.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Grpc.Auth.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Grpc.Core.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.Modules.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.SQLite.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\IronPython.Wpf.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.dll.config
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Codecs.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Documents.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Drawing.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.DocumentWriters.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Forms.Ocr.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\log4net.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Dynamic.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.AspNet.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Microsoft.Scripting.Metadata.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Newtonsoft.Json.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.ArgTypes.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.CAPI.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPage.CSDK.Objects.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPageSDK.ToolBoxes.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Tesseract.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Barcode.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Caching.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.Svg.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Effects.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Core.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ImageProcessing.Color.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Nuance.OmniPageSDK.IproPlus.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\Leadtools.ColorConversion.xml
+C:\ConsoleApplication18\ConsoleApplication18\obj\Debug\ConsoleApplication18.ProjectInstaller.resources
+C:\ConsoleApplication18\ConsoleApplication18\obj\Debug\TesteOcrAPIGOOGLE.csproj.GenerateResource.Cache
+C:\ConsoleApplication18\ConsoleApplication18\obj\Debug\TesteOcrAPIGOOGLE.csproj.CoreCompileInputs.cache
+C:\ConsoleApplication18\ConsoleApplication18\obj\Debug\ConsoleApplication18.exe
+C:\ConsoleApplication18\ConsoleApplication18\obj\Debug\ConsoleApplication18.pdb
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\zxing.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\zxing.presentation.dll
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\zxing.pdb
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\zxing.xml
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\zxing.presentation.pdb
+C:\ConsoleApplication18\ConsoleApplication18\bin\Debug\zxing.presentation.xml
+C:\ConsoleApplication18\ConsoleApplication18\obj\Debug\TesteOcrAPIGOOGLE.csprojResolveAssemblyReference.cache

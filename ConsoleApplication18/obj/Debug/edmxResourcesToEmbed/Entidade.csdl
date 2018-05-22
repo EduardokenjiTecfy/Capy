@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PocOcrModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PocOcrEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CONFIGURACAO" EntityType="PocOcrModel.CONFIGURACAO" />
+    <EntitySet Name="Device" EntityType="PocOcrModel.Device" />
+    <EntitySet Name="Documento" EntityType="PocOcrModel.Documento" />
+    <EntitySet Name="LogOcr" EntityType="PocOcrModel.LogOcr" />
+    <EntitySet Name="Modelo" EntityType="PocOcrModel.Modelo" />
+    <EntitySet Name="OrientacaoDocumento" EntityType="PocOcrModel.OrientacaoDocumento" />
+    <EntitySet Name="PALAVRA_ORIENTACAO" EntityType="PocOcrModel.PALAVRA_ORIENTACAO" />
+    <EntitySet Name="Palavras" EntityType="PocOcrModel.Palavras" />
+    <EntitySet Name="PROJETO" EntityType="PocOcrModel.PROJETO" />
+    <EntitySet Name="PROJETO_MODELO" EntityType="PocOcrModel.PROJETO_MODELO" />
+    <EntitySet Name="Usuario" EntityType="PocOcrModel.Usuario" />
+    <AssociationSet Name="FK__Documento__Model__1A14E395" Association="PocOcrModel.FK__Documento__Model__1A14E395">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Documento__Palav__1B0907CE" Association="PocOcrModel.FK__Documento__Palav__1B0907CE">
+      <End Role="Palavras" EntitySet="Palavras" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documento_Palavras" Association="PocOcrModel.FK_Documento_Palavras">
+      <End Role="Documento" EntitySet="Documento" />
+      <End Role="Documento1" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orientaca__IdMod__1CF15040" Association="PocOcrModel.FK__Orientaca__IdMod__1CF15040">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="OrientacaoDocumento" EntitySet="OrientacaoDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Palavras__IdMode__1DE57479" Association="PocOcrModel.FK__Palavras__IdMode__1DE57479">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="Palavras" EntitySet="Palavras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MODELO" Association="PocOcrModel.FK_MODELO">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROJETO" Association="PocOcrModel.FK_PROJETO">
+      <End Role="PROJETO" EntitySet="PROJETO" />
+      <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="PocOcrModel.sysdiagrams" />
+    <EntitySet Name="Tipo_Regex_Extracao" EntityType="PocOcrModel.Tipo_Regex_Extracao" />
+    <EntitySet Name="TipoExtracao" EntityType="PocOcrModel.TipoExtracao" />
+    <AssociationSet Name="FK__Tipo_Rege__IdOri__5070F446" Association="PocOcrModel.FK__Tipo_Rege__IdOri__5070F446">
+      <End Role="OrientacaoDocumento" EntitySet="OrientacaoDocumento" />
+      <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tipo_Rege__IdPro__4F7CD00D" Association="PocOcrModel.FK__Tipo_Rege__IdPro__4F7CD00D">
+      <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+      <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tipo_Rege__TipoE__4E88ABD4" Association="PocOcrModel.FK__Tipo_Rege__TipoE__4E88ABD4">
+      <End Role="TipoExtracao" EntitySet="TipoExtracao" />
+      <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CONFIGURACAO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIPO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Numero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Profile" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModeloId" Type="Int32" Nullable="false" />
+    <Property Name="NomeDocumento" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Valor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PalavraId" Type="Int32" />
+    <Property Name="column_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Modelo" Relationship="PocOcrModel.FK__Documento__Model__1A14E395" FromRole="Documento" ToRole="Modelo" />
+    <NavigationProperty Name="Palavras" Relationship="PocOcrModel.FK__Documento__Palav__1B0907CE" FromRole="Documento" ToRole="Palavras" />
+    <NavigationProperty Name="Documento1" Relationship="PocOcrModel.FK_Documento_Palavras" FromRole="Documento" ToRole="Documento1" />
+    <NavigationProperty Name="Documento2" Relationship="PocOcrModel.FK_Documento_Palavras" FromRole="Documento1" ToRole="Documento" />
+  </EntityType>
+  <EntityType Name="LogOcr">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Data" Type="DateTime" Precision="3" />
+    <Property Name="Resultado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nome" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Motor" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Modelo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="IdDocumento" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Modelo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CNPJ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Documento" Relationship="PocOcrModel.FK__Documento__Model__1A14E395" FromRole="Modelo" ToRole="Documento" />
+    <NavigationProperty Name="OrientacaoDocumento" Relationship="PocOcrModel.FK__Orientaca__IdMod__1CF15040" FromRole="Modelo" ToRole="OrientacaoDocumento" />
+    <NavigationProperty Name="Palavras" Relationship="PocOcrModel.FK__Palavras__IdMode__1DE57479" FromRole="Modelo" ToRole="Palavras" />
+    <NavigationProperty Name="PROJETO_MODELO" Relationship="PocOcrModel.FK_MODELO" FromRole="Modelo" ToRole="PROJETO_MODELO" />
+  </EntityType>
+  <EntityType Name="OrientacaoDocumento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="x" Type="Int32" />
+    <Property Name="y" Type="Int32" />
+    <Property Name="width" Type="Int32" />
+    <Property Name="height" Type="Int32" />
+    <Property Name="IdModelo" Type="Int32" />
+    <Property Name="nome" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Palavra" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tamanho" Type="Int32" />
+    <Property Name="SomenteNumeros" Type="Boolean" />
+    <Property Name="Regex" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Barcode" Type="Boolean" />
+    <Property Name="QrCode" Type="Boolean" />
+    <NavigationProperty Name="Modelo" Relationship="PocOcrModel.FK__Orientaca__IdMod__1CF15040" FromRole="OrientacaoDocumento" ToRole="Modelo" />
+    <NavigationProperty Name="Tipo_Regex_Extracao" Relationship="PocOcrModel.FK__Tipo_Rege__IdOri__5070F446" FromRole="OrientacaoDocumento" ToRole="Tipo_Regex_Extracao" />
+  </EntityType>
+  <EntityType Name="PALAVRA_ORIENTACAO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDPALAVRA" Type="Int32" />
+    <Property Name="IDORIENTACAO" Type="Int32" />
+    <Property Name="IDDOCUMENTO" Type="Int32" />
+    <Property Name="IDREGISTRO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Palavras">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdModelo" Type="Int32" />
+    <Property Name="Palavra" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Contem" Type="Boolean" />
+    <Property Name="Ancora" Type="Boolean" />
+    <Property Name="Barcode" Type="Boolean" />
+    <NavigationProperty Name="Documento" Relationship="PocOcrModel.FK__Documento__Palav__1B0907CE" FromRole="Palavras" ToRole="Documento" />
+    <NavigationProperty Name="Modelo" Relationship="PocOcrModel.FK__Palavras__IdMode__1DE57479" FromRole="Palavras" ToRole="Modelo" />
+  </EntityType>
+  <EntityType Name="PROJETO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ConfiguracaoID" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PROJETO_MODELO" Relationship="PocOcrModel.FK_PROJETO" FromRole="PROJETO" ToRole="PROJETO_MODELO" />
+  </EntityType>
+  <EntityType Name="PROJETO_MODELO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROJETO_ID" Type="Int32" Nullable="false" />
+    <Property Name="MODELO_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Modelo" Relationship="PocOcrModel.FK_MODELO" FromRole="PROJETO_MODELO" ToRole="Modelo" />
+    <NavigationProperty Name="PROJETO" Relationship="PocOcrModel.FK_PROJETO" FromRole="PROJETO_MODELO" ToRole="PROJETO" />
+    <NavigationProperty Name="Tipo_Regex_Extracao" Relationship="PocOcrModel.FK__Tipo_Rege__IdPro__4F7CD00D" FromRole="PROJETO_MODELO" ToRole="Tipo_Regex_Extracao" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="senha" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__Documento__Model__1A14E395">
+    <End Type="PocOcrModel.Modelo" Role="Modelo" Multiplicity="1" />
+    <End Type="PocOcrModel.Documento" Role="Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="ModeloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Documento__Palav__1B0907CE">
+    <End Type="PocOcrModel.Palavras" Role="Palavras" Multiplicity="0..1" />
+    <End Type="PocOcrModel.Documento" Role="Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Palavras">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="PalavraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documento_Palavras">
+    <End Type="PocOcrModel.Documento" Role="Documento" Multiplicity="1" />
+    <End Type="PocOcrModel.Documento" Role="Documento1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Documento">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Documento1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orientaca__IdMod__1CF15040">
+    <End Type="PocOcrModel.Modelo" Role="Modelo" Multiplicity="0..1" />
+    <End Type="PocOcrModel.OrientacaoDocumento" Role="OrientacaoDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrientacaoDocumento">
+        <PropertyRef Name="IdModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Palavras__IdMode__1DE57479">
+    <End Type="PocOcrModel.Modelo" Role="Modelo" Multiplicity="0..1" />
+    <End Type="PocOcrModel.Palavras" Role="Palavras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Palavras">
+        <PropertyRef Name="IdModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MODELO">
+    <End Type="PocOcrModel.Modelo" Role="Modelo" Multiplicity="1" />
+    <End Type="PocOcrModel.PROJETO_MODELO" Role="PROJETO_MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PROJETO_MODELO">
+        <PropertyRef Name="MODELO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROJETO">
+    <End Type="PocOcrModel.PROJETO" Role="PROJETO" Multiplicity="1" />
+    <End Type="PocOcrModel.PROJETO_MODELO" Role="PROJETO_MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJETO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PROJETO_MODELO">
+        <PropertyRef Name="PROJETO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tipo_Regex_Extracao">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipoExtracaoId" Type="Int32" Nullable="false" />
+    <Property Name="IdProjetoModelo" Type="Int32" Nullable="false" />
+    <Property Name="IdOrientacaoModelo" Type="Int32" Nullable="false" />
+    <Property Name="ordem" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="OrientacaoDocumento" Relationship="PocOcrModel.FK__Tipo_Rege__IdOri__5070F446" FromRole="Tipo_Regex_Extracao" ToRole="OrientacaoDocumento" />
+    <NavigationProperty Name="PROJETO_MODELO" Relationship="PocOcrModel.FK__Tipo_Rege__IdPro__4F7CD00D" FromRole="Tipo_Regex_Extracao" ToRole="PROJETO_MODELO" />
+    <NavigationProperty Name="TipoExtracao" Relationship="PocOcrModel.FK__Tipo_Rege__TipoE__4E88ABD4" FromRole="Tipo_Regex_Extracao" ToRole="TipoExtracao" />
+  </EntityType>
+  <EntityType Name="TipoExtracao">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Regex" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Tipo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tipo_Regex_Extracao" Relationship="PocOcrModel.FK__Tipo_Rege__TipoE__4E88ABD4" FromRole="TipoExtracao" ToRole="Tipo_Regex_Extracao" />
+  </EntityType>
+  <Association Name="FK__Tipo_Rege__IdOri__5070F446">
+    <End Type="PocOcrModel.OrientacaoDocumento" Role="OrientacaoDocumento" Multiplicity="1" />
+    <End Type="PocOcrModel.Tipo_Regex_Extracao" Role="Tipo_Regex_Extracao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrientacaoDocumento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tipo_Regex_Extracao">
+        <PropertyRef Name="IdOrientacaoModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tipo_Rege__IdPro__4F7CD00D">
+    <End Type="PocOcrModel.PROJETO_MODELO" Role="PROJETO_MODELO" Multiplicity="1" />
+    <End Type="PocOcrModel.Tipo_Regex_Extracao" Role="Tipo_Regex_Extracao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJETO_MODELO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tipo_Regex_Extracao">
+        <PropertyRef Name="IdProjetoModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tipo_Rege__TipoE__4E88ABD4">
+    <End Type="PocOcrModel.TipoExtracao" Role="TipoExtracao" Multiplicity="1" />
+    <End Type="PocOcrModel.Tipo_Regex_Extracao" Role="Tipo_Regex_Extracao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoExtracao">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tipo_Regex_Extracao">
+        <PropertyRef Name="TipoExtracaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

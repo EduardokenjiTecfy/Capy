@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PocOcrDesenvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CONFIGURACAO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="255" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="Padrao" Type="bit" />
+  </EntityType>
+  <EntityType Name="ControleQualidadeLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="caminho" Type="nvarchar(max)" />
+    <Property Name="data" Type="date" />
+    <Property Name="processado" Type="bit" />
+    <Property Name="exportId" Type="int" />
+    <Property Name="projetoId" Type="int" />
+    <Property Name="LogOcrId" Type="int" />
+    <Property Name="usuario" Type="nvarchar(max)" />
+    <Property Name="indice" Type="nvarchar(max)" />
+    <Property Name="liberado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Numero" Type="varchar" MaxLength="255" />
+    <Property Name="Profile" Type="varchar" MaxLength="255" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModeloId" Type="int" Nullable="false" />
+    <Property Name="NomeDocumento" Type="varchar" MaxLength="200" />
+    <Property Name="Valor" Type="nvarchar(max)" />
+    <Property Name="PalavraId" Type="int" />
+    <Property Name="column_name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="documentocaptura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="caminhoEntrada" Type="varchar(max)" />
+    <Property Name="caminhoSaida" Type="varchar(max)" />
+    <Property Name="caminhoRaiz" Type="varchar(max)" />
+    <Property Name="ProjetoId" Type="int" />
+    <Property Name="ProjetoNome" Type="varchar(max)" />
+    <Property Name="lock" Type="bit" />
+    <Property Name="Data" Type="datetime" />
+    <Property Name="caminhoArquivo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Eventos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Evento" Type="nvarchar(max)" />
+    <Property Name="codigo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Export">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Url" Type="nvarchar(max)" />
+    <Property Name="Senha" Type="nvarchar(max)" />
+    <Property Name="Usuario" Type="nvarchar(max)" />
+    <Property Name="Apelido" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Indice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Indice" Type="nvarchar(max)" />
+    <Property Name="Valor" Type="nvarchar(max)" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdLog" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogOcr">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Data" Type="datetime" />
+    <Property Name="Resultado" Type="nvarchar(max)" />
+    <Property Name="nome" Type="nchar" MaxLength="100" />
+    <Property Name="Motor" Type="nchar" MaxLength="100" />
+    <Property Name="Modelo" Type="nchar" MaxLength="100" />
+    <Property Name="IdDocumento" Type="nchar" MaxLength="100" />
+    <Property Name="Indice" Type="nvarchar(max)" />
+    <Property Name="ProjetoId" Type="int" />
+    <Property Name="UsuarioId" Type="int" />
+    <Property Name="usuario" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Mensagem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mensagem" Type="nvarchar(max)" />
+    <Property Name="Lido" Type="bit" />
+    <Property Name="UsuarioId" Type="int" />
+    <Property Name="Data" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Modelo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="255" />
+    <Property Name="CNPJ" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ModeloProcessamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Processar" Type="bit" />
+    <Property Name="ModeloId" Type="int" />
+    <Property Name="ProjetoId" Type="int" />
+  </EntityType>
+  <EntityType Name="OrientacaoDocumento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="x" Type="int" />
+    <Property Name="y" Type="int" />
+    <Property Name="width" Type="int" />
+    <Property Name="height" Type="int" />
+    <Property Name="IdModelo" Type="int" />
+    <Property Name="nome" Type="nchar" MaxLength="100" />
+    <Property Name="Palavra" Type="nvarchar(max)" />
+    <Property Name="Tamanho" Type="int" />
+    <Property Name="SomenteNumeros" Type="bit" />
+    <Property Name="Regex" Type="varchar" MaxLength="150" />
+    <Property Name="Barcode" Type="bit" />
+    <Property Name="QrCode" Type="bit" />
+    <Property Name="Evento" Type="bit" />
+    <Property Name="PARAMETROENTRADA" Type="nvarchar(max)" />
+    <Property Name="EspacoBranco" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PALAVRA_ORIENTACAO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDPALAVRA" Type="int" />
+    <Property Name="IDORIENTACAO" Type="int" />
+    <Property Name="IDDOCUMENTO" Type="int" />
+    <Property Name="IDREGISTRO" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Palavras">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdModelo" Type="int" />
+    <Property Name="Palavra" Type="varchar" MaxLength="255" />
+    <Property Name="Contem" Type="bit" />
+    <Property Name="Ancora" Type="bit" />
+    <Property Name="Barcode" Type="bit" />
+    <Property Name="QRcode" Type="bit" />
+    <Property Name="GuardarValorIndexacao" Type="bit" />
+    <Property Name="porcentagemMin" Type="int" />
+    <Property Name="porcentagemmax" Type="int" />
+    <Property Name="pagina" Type="int" />
+  </EntityType>
+  <EntityType Name="PalavrasCoordenadasDocumento">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="x" Type="int" />
+    <Property Name="y" Type="int" />
+    <Property Name="width" Type="int" />
+    <Property Name="height" Type="int" />
+    <Property Name="texto" Type="varchar(max)" />
+    <Property Name="IDMODELO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PARAMETROENTRADA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Tipo" Type="varchar" MaxLength="200" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Perfil">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nome" Type="varchar(max)" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="data" Type="date" />
+  </EntityType>
+  <EntityType Name="ProcessarTreinamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModeloId" Type="int" />
+    <Property Name="data" Type="datetime" />
+    <Property Name="verificado" Type="bit" />
+    <Property Name="Texto" Type="nvarchar(max)" />
+    <Property Name="Modelo" Type="nvarchar(max)" />
+    <Property Name="caminho" Type="nvarchar(max)" />
+    <Property Name="ProjetoId" Type="int" />
+  </EntityType>
+  <EntityType Name="PROJETO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ConfiguracaoID" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" />
+    <Property Name="agrupamento" Type="bit" />
+    <Property Name="exportId" Type="int" />
+    <Property Name="utilizarMineracao" Type="bit" />
+    <Property Name="arquivo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PROJETO_MODELO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROJETO_ID" Type="int" Nullable="false" />
+    <Property Name="MODELO_ID" Type="int" Nullable="false" />
+    <Property Name="Padrao" Type="varchar(max)" />
+    <Property Name="ControleQualidade" Type="bit" />
+  </EntityType>
+  <EntityType Name="Projeto_modelo_evento">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Data" Type="date" />
+    <Property Name="IdEvento" Type="int" Nullable="false" />
+    <Property Name="IdProjetoModelo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Projeto_Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProjeto" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="data" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Tipo_Regex_Extracao">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoExtracaoId" Type="int" Nullable="false" />
+    <Property Name="IdProjetoModelo" Type="int" Nullable="false" />
+    <Property Name="IdOrientacaoModelo" Type="int" Nullable="false" />
+    <Property Name="ordem" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoExtracao">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Regex" Type="varchar" MaxLength="255" />
+    <Property Name="Tipo" Type="varchar" MaxLength="255" />
+    <Property Name="Descricao" Type="nvarchar(max)" />
+    <Property Name="Usados" Type="int" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login" Type="varchar" MaxLength="200" />
+    <Property Name="senha" Type="varchar" MaxLength="200" />
+    <Property Name="email" Type="nchar" MaxLength="200" />
+    <Property Name="PerfilId" Type="int" Nullable="false" />
+    <Property Name="Profile" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK__ControleQ__LogOc__1AD3FDA4">
+    <End Role="LogOcr" Type="Self.LogOcr" Multiplicity="0..1" />
+    <End Role="ControleQualidadeLog" Type="Self.ControleQualidadeLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogOcr">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ControleQualidadeLog">
+        <PropertyRef Name="LogOcrId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Documento__Model__6FE99F9F">
+    <End Role="Modelo" Type="Self.Modelo" Multiplicity="1" />
+    <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="ModeloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Documento__Palav__70DDC3D8">
+    <End Role="Palavras" Type="Self.Palavras" Multiplicity="0..1" />
+    <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Palavras">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="PalavraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Indice__IdLog__160F4887">
+    <End Role="LogOcr" Type="Self.LogOcr" Multiplicity="1" />
+    <End Role="Indice" Type="Self.Indice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogOcr">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Indice">
+        <PropertyRef Name="IdLog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orientaca__IdMod__72C60C4A">
+    <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+    <End Role="OrientacaoDocumento" Type="Self.OrientacaoDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrientacaoDocumento">
+        <PropertyRef Name="IdModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Palavras__IdMode__73BA3083">
+    <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+    <End Role="Palavras" Type="Self.Palavras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Palavras">
+        <PropertyRef Name="IdModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PalavrasC__IDMOD__74AE54BC">
+    <End Role="Modelo" Type="Self.Modelo" Multiplicity="1" />
+    <End Role="PalavrasCoordenadasDocumento" Type="Self.PalavrasCoordenadasDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PalavrasCoordenadasDocumento">
+        <PropertyRef Name="IDMODELO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Projeto_m__IdEve__778AC167">
+    <End Role="Eventos" Type="Self.Eventos" Multiplicity="1" />
+    <End Role="Projeto_modelo_evento" Type="Self.Projeto_modelo_evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Eventos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Projeto_modelo_evento">
+        <PropertyRef Name="IdEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Projeto_m__IdPro__787EE5A0">
+    <End Role="PROJETO_MODELO" Type="Self.PROJETO_MODELO" Multiplicity="1" />
+    <End Role="Projeto_modelo_evento" Type="Self.Projeto_modelo_evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJETO_MODELO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Projeto_modelo_evento">
+        <PropertyRef Name="IdProjetoModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Projeto_U__IdPro__02FC7413">
+    <End Role="PROJETO" Type="Self.PROJETO" Multiplicity="1" />
+    <End Role="Projeto_Usuario" Type="Self.Projeto_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJETO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Projeto_Usuario">
+        <PropertyRef Name="IdProjeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Projeto_U__IdUsu__03F0984C">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Projeto_Usuario" Type="Self.Projeto_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Projeto_Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tipo_Rege__IdOri__797309D9">
+    <End Role="OrientacaoDocumento" Type="Self.OrientacaoDocumento" Multiplicity="1" />
+    <End Role="Tipo_Regex_Extracao" Type="Self.Tipo_Regex_Extracao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrientacaoDocumento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tipo_Regex_Extracao">
+        <PropertyRef Name="IdOrientacaoModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tipo_Rege__IdPro__7A672E12">
+    <End Role="PROJETO_MODELO" Type="Self.PROJETO_MODELO" Multiplicity="1" />
+    <End Role="Tipo_Regex_Extracao" Type="Self.Tipo_Regex_Extracao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJETO_MODELO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tipo_Regex_Extracao">
+        <PropertyRef Name="IdProjetoModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tipo_Rege__TipoE__7B5B524B">
+    <End Role="TipoExtracao" Type="Self.TipoExtracao" Multiplicity="1" />
+    <End Role="Tipo_Regex_Extracao" Type="Self.Tipo_Regex_Extracao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoExtracao">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tipo_Regex_Extracao">
+        <PropertyRef Name="TipoExtracaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__PerfilI__7C4F7684">
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="PerfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documento_Palavras">
+    <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+    <End Role="Documento1" Type="Self.Documento" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Documento">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Documento1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MODELO">
+    <End Role="Modelo" Type="Self.Modelo" Multiplicity="1" />
+    <End Role="PROJETO_MODELO" Type="Self.PROJETO_MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PROJETO_MODELO">
+        <PropertyRef Name="MODELO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROJETO">
+    <End Role="PROJETO" Type="Self.PROJETO" Multiplicity="1" />
+    <End Role="PROJETO_MODELO" Type="Self.PROJETO_MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJETO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PROJETO_MODELO">
+        <PropertyRef Name="PROJETO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PocOcrDesenvModelStoreContainer">
+    <EntitySet Name="CONFIGURACAO" EntityType="Self.CONFIGURACAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ControleQualidadeLog" EntityType="Self.ControleQualidadeLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="documentocaptura" EntityType="Self.documentocaptura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Eventos" EntityType="Self.Eventos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Export" EntityType="Self.Export" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Indice" EntityType="Self.Indice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogOcr" EntityType="Self.LogOcr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mensagem" EntityType="Self.Mensagem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Modelo" EntityType="Self.Modelo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModeloProcessamento" EntityType="Self.ModeloProcessamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrientacaoDocumento" EntityType="Self.OrientacaoDocumento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PALAVRA_ORIENTACAO" EntityType="Self.PALAVRA_ORIENTACAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Palavras" EntityType="Self.Palavras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PalavrasCoordenadasDocumento" EntityType="Self.PalavrasCoordenadasDocumento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARAMETROENTRADA" EntityType="Self.PARAMETROENTRADA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProcessarTreinamento" EntityType="Self.ProcessarTreinamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROJETO" EntityType="Self.PROJETO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROJETO_MODELO" EntityType="Self.PROJETO_MODELO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projeto_modelo_evento" EntityType="Self.Projeto_modelo_evento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projeto_Usuario" EntityType="Self.Projeto_Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tipo_Regex_Extracao" EntityType="Self.Tipo_Regex_Extracao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoExtracao" EntityType="Self.TipoExtracao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ControleQ__LogOc__1AD3FDA4" Association="Self.FK__ControleQ__LogOc__1AD3FDA4">
+      <End Role="LogOcr" EntitySet="LogOcr" />
+      <End Role="ControleQualidadeLog" EntitySet="ControleQualidadeLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Documento__Model__6FE99F9F" Association="Self.FK__Documento__Model__6FE99F9F">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Documento__Palav__70DDC3D8" Association="Self.FK__Documento__Palav__70DDC3D8">
+      <End Role="Palavras" EntitySet="Palavras" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Indice__IdLog__160F4887" Association="Self.FK__Indice__IdLog__160F4887">
+      <End Role="LogOcr" EntitySet="LogOcr" />
+      <End Role="Indice" EntitySet="Indice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orientaca__IdMod__72C60C4A" Association="Self.FK__Orientaca__IdMod__72C60C4A">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="OrientacaoDocumento" EntitySet="OrientacaoDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Palavras__IdMode__73BA3083" Association="Self.FK__Palavras__IdMode__73BA3083">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="Palavras" EntitySet="Palavras" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PalavrasC__IDMOD__74AE54BC" Association="Self.FK__PalavrasC__IDMOD__74AE54BC">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="PalavrasCoordenadasDocumento" EntitySet="PalavrasCoordenadasDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Projeto_m__IdEve__778AC167" Association="Self.FK__Projeto_m__IdEve__778AC167">
+      <End Role="Eventos" EntitySet="Eventos" />
+      <End Role="Projeto_modelo_evento" EntitySet="Projeto_modelo_evento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Projeto_m__IdPro__787EE5A0" Association="Self.FK__Projeto_m__IdPro__787EE5A0">
+      <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+      <End Role="Projeto_modelo_evento" EntitySet="Projeto_modelo_evento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Projeto_U__IdPro__02FC7413" Association="Self.FK__Projeto_U__IdPro__02FC7413">
+      <End Role="PROJETO" EntitySet="PROJETO" />
+      <End Role="Projeto_Usuario" EntitySet="Projeto_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Projeto_U__IdUsu__03F0984C" Association="Self.FK__Projeto_U__IdUsu__03F0984C">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Projeto_Usuario" EntitySet="Projeto_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tipo_Rege__IdOri__797309D9" Association="Self.FK__Tipo_Rege__IdOri__797309D9">
+      <End Role="OrientacaoDocumento" EntitySet="OrientacaoDocumento" />
+      <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tipo_Rege__IdPro__7A672E12" Association="Self.FK__Tipo_Rege__IdPro__7A672E12">
+      <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+      <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tipo_Rege__TipoE__7B5B524B" Association="Self.FK__Tipo_Rege__TipoE__7B5B524B">
+      <End Role="TipoExtracao" EntitySet="TipoExtracao" />
+      <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__PerfilI__7C4F7684" Association="Self.FK__Usuario__PerfilI__7C4F7684">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documento_Palavras" Association="Self.FK_Documento_Palavras">
+      <End Role="Documento" EntitySet="Documento" />
+      <End Role="Documento1" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MODELO" Association="Self.FK_MODELO">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROJETO" Association="Self.FK_PROJETO">
+      <End Role="PROJETO" EntitySet="PROJETO" />
+      <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

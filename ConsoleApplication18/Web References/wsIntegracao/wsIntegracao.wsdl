@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ConsultaTiposDocumentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoFolder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaTiposDocumentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaTiposDocumentosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GravarFolderCloudDocs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Origem" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice06" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observacao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documento" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="Extensao" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Classificacao" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Complemento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Evento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderCloudDocsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GravarFolderCloudDocsResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFolders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClienteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoFolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice06" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataIni" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataFim" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFoldersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarFoldersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaTiposDocumentosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaTiposDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTiposDocumentosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaTiposDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTiposDocumentosAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocs" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFoldersSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarFolders" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFoldersSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFoldersAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="WSIntegracaoSoap">
+    <wsdl:operation name="ConsultaTiposDocumentos">
+      <wsdl:input message="tns:ConsultaTiposDocumentosSoapIn" />
+      <wsdl:output message="tns:ConsultaTiposDocumentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocs">
+      <wsdl:input message="tns:GravarFolderCloudDocsSoapIn" />
+      <wsdl:output message="tns:GravarFolderCloudDocsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFolders">
+      <wsdl:input message="tns:ConsultarFoldersSoapIn" />
+      <wsdl:output message="tns:ConsultarFoldersSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSIntegracaoSoap" type="tns:WSIntegracaoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaTiposDocumentos">
+      <soap:operation soapAction="http://tempuri.org/ConsultaTiposDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaTiposDocumentosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocs">
+      <soap:operation soapAction="http://tempuri.org/GravarFolderCloudDocs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarFolderCloudDocsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFolders">
+      <soap:operation soapAction="http://tempuri.org/ConsultarFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarFoldersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSIntegracaoSoap12" type="tns:WSIntegracaoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaTiposDocumentos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaTiposDocumentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaTiposDocumentosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocs">
+      <soap12:operation soapAction="http://tempuri.org/GravarFolderCloudDocs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarFolderCloudDocsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFolders">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarFoldersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSIntegracao">
+    <wsdl:port name="WSIntegracaoSoap" binding="tns:WSIntegracaoSoap">
+      <soap:address location="https://www.clouddocs.com.br/homolog/wsIntegracao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSIntegracaoSoap12" binding="tns:WSIntegracaoSoap12">
+      <soap12:address location="https://www.clouddocs.com.br/homolog/wsIntegracao.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PocOcrModelStoreContainer" CdmEntityContainer="PocOcrEntities">
+    <EntitySetMapping Name="Documento">
+      <EntityTypeMapping TypeName="PocOcrModel.Documento">
+        <MappingFragment StoreEntitySet="Documento">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ModeloId" ColumnName="ModeloId" />
+          <ScalarProperty Name="NomeDocumento" ColumnName="NomeDocumento" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="PalavraId" ColumnName="PalavraId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modelo">
+      <EntityTypeMapping TypeName="PocOcrModel.Modelo">
+        <MappingFragment StoreEntitySet="Modelo">
+          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrientacaoDocumento">
+      <EntityTypeMapping TypeName="PocOcrModel.OrientacaoDocumento">
+        <MappingFragment StoreEntitySet="OrientacaoDocumento">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="y" ColumnName="y" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="IdModelo" ColumnName="IdModelo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="Palavra" ColumnName="Palavra" />
+          <ScalarProperty Name="Tamanho" ColumnName="Tamanho" />
+          <ScalarProperty Name="SomenteNumeros" ColumnName="SomenteNumeros" />
+          <ScalarProperty Name="Regex" ColumnName="Regex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PALAVRA_ORIENTACAO">
+      <EntityTypeMapping TypeName="PocOcrModel.PALAVRA_ORIENTACAO">
+        <MappingFragment StoreEntitySet="PALAVRA_ORIENTACAO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPALAVRA" ColumnName="IDPALAVRA" />
+          <ScalarProperty Name="IDORIENTACAO" ColumnName="IDORIENTACAO" />
+          <ScalarProperty Name="IDDOCUMENTO" ColumnName="IDDOCUMENTO" />
+          <ScalarProperty Name="IDREGISTRO" ColumnName="IDREGISTRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Palavras">
+      <EntityTypeMapping TypeName="PocOcrModel.Palavras">
+        <MappingFragment StoreEntitySet="Palavras">
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdModelo" ColumnName="IdModelo" />
+          <ScalarProperty Name="Palavra" ColumnName="Palavra" />
+          <ScalarProperty Name="Contem" ColumnName="Contem" />
+          <ScalarProperty Name="Ancora" ColumnName="Ancora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PocOcrModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="PocOcrModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
