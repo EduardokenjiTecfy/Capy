@@ -1,0 +1,23 @@
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\bin\Debug\x64\liblept172.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\bin\Debug\x64\libtesseract304.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\bin\Debug\x86\liblept172.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\bin\Debug\x86\libtesseract304.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\bin\Debug\OcrTesseract.pdb
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\bin\Debug\tessnet2_32.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\obj\Debug\OcrTesseract.pdb
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\obj\Debug\OcrTesseract.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\bin\Debug\OcrTesseract.exe.config
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\bin\Debug\OcrTesseract.exe
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\OcrTesseract\obj\Debug\OcrTesseract.exe
+C:\ConsoleApplication18\OcrTesseract\bin\Debug\x64\liblept172.dll
+C:\ConsoleApplication18\OcrTesseract\bin\Debug\x64\libtesseract304.dll
+C:\ConsoleApplication18\OcrTesseract\bin\Debug\x86\liblept172.dll
+C:\ConsoleApplication18\OcrTesseract\bin\Debug\x86\libtesseract304.dll
+C:\ConsoleApplication18\OcrTesseract\bin\Debug\OcrTesseract.exe.config
+C:\ConsoleApplication18\OcrTesseract\bin\Debug\OcrTesseract.exe
+C:\ConsoleApplication18\OcrTesseract\bin\Debug\OcrTesseract.pdb
+C:\ConsoleApplication18\OcrTesseract\bin\Debug\tessnet2_32.dll
+C:\ConsoleApplication18\OcrTesseract\obj\Debug\OcrTesseract.csprojResolveAssemblyReference.cache
+C:\ConsoleApplication18\OcrTesseract\obj\Debug\OcrTesseract.csproj.CoreCompileInputs.cache
+C:\ConsoleApplication18\OcrTesseract\obj\Debug\OcrTesseract.exe
+C:\ConsoleApplication18\OcrTesseract\obj\Debug\OcrTesseract.pdb

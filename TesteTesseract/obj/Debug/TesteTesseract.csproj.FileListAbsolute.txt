@@ -1,0 +1,25 @@
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\bin\Debug\TesteTesseract.exe.config
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\bin\Debug\TesteTesseract.exe
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\bin\Debug\TesteTesseract.pdb
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\obj\Debug\TesteTesseract.exe
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\obj\Debug\TesteTesseract.pdb
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\bin\Debug\x64\liblept172.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\bin\Debug\x64\libtesseract304.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\bin\Debug\x86\liblept172.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\bin\Debug\x86\libtesseract304.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\bin\Debug\Tesseract.dll
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\bin\Debug\Tesseract.xml
+C:\Users\Administrador\Documents\Visual Studio 2015\Projects\ConsoleApplication18\TesteTesseract\obj\Debug\TesteTesseract.csprojResolveAssemblyReference.cache
+C:\ConsoleApplication18\TesteTesseract\bin\Debug\x64\liblept172.dll
+C:\ConsoleApplication18\TesteTesseract\bin\Debug\x64\libtesseract304.dll
+C:\ConsoleApplication18\TesteTesseract\bin\Debug\x86\liblept172.dll
+C:\ConsoleApplication18\TesteTesseract\bin\Debug\x86\libtesseract304.dll
+C:\ConsoleApplication18\TesteTesseract\bin\Debug\TesteTesseract.exe.config
+C:\ConsoleApplication18\TesteTesseract\bin\Debug\TesteTesseract.exe
+C:\ConsoleApplication18\TesteTesseract\bin\Debug\TesteTesseract.pdb
+C:\ConsoleApplication18\TesteTesseract\bin\Debug\Tesseract.dll
+C:\ConsoleApplication18\TesteTesseract\bin\Debug\Tesseract.xml
+C:\ConsoleApplication18\TesteTesseract\obj\Debug\TesteTesseract.csprojResolveAssemblyReference.cache
+C:\ConsoleApplication18\TesteTesseract\obj\Debug\TesteTesseract.csproj.CoreCompileInputs.cache
+C:\ConsoleApplication18\TesteTesseract\obj\Debug\TesteTesseract.exe
+C:\ConsoleApplication18\TesteTesseract\obj\Debug\TesteTesseract.pdb
