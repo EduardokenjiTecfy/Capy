@@ -1,0 +1,59 @@
+                                                         Objects 
+
+
+     This form contains objects that are  commonly used  in many forms. You  may  copy  objects from this form and paste 
+     them into any other form  you are designing. Follow the steps below to do so: 
+
+     1. Select the object(s) you are interested in. You  may select multiple objects by clicking and dragging, or by clicking 
+          and holding down the shift key. 
+     2. Use the  Copy command   in the Edit   menu to copy the selected objects to the clipboard. 
+
+     3. Switch to the form you want to paste  the copied objects into. When  that form is active, select Paste from the Edit 
+         menu. 
+     4. Move  your pasted objects to any  location you desire. 
+
+
+                                                                    Notes: This form  contains objects that are 
+  Name:    Dr. Joel Fleischman 
+                                                                      commonly used in many forms. 
+
+  Address:  Butcher  street 13. 
+
+  City: Cicely 
+
+  State: Alaska                    Zip: 6572 
+
+
+
+
+  Phone    Number: ( 00-48     ) 26289550                          Zip Code:     0   6  5    7   2       0 9 0 7 
+
+
+  Fax  Number:     ( 00-48     ) 26289550                              Date:     0   9   /   1   2 j  /  2    4 
+
+
+        Credit Card #' 
+                                                                                              Expiration Date: 
+        0  16               0  16                  0 6 5 7            0 6 5 7                              1   2 
+                                                                                              0    9   / 
+
+
+
+                 Option  Group with Check   Boxes: 
+
+
+                           0 Yes 0 No 
+
+
+                                Description                                        QTY        Unit Price      Item Total 
+trebuchet                                                                    2 pcs          18,000          36,000 
+                                                                            , 
+trebuchet                                                                    2 pcs          18,000          36,000 
+
+
+
+
+
+
+
+                                                                                                  Total:    72,000 
