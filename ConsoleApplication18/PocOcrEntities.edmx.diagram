@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="629ac7bc2caf4eb38749ce19552239f1" Name="Diagram1">
+        <EntityTypeShape EntityType="PocOcrDesenvModel.CONFIGURACAO" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.ControleQualidadeLog" Width="1.5" PointX="11" PointY="3.875" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Device" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Documento" Width="1.5" PointX="5.25" PointY="15.875" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.documentocaptura" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Eventos" Width="1.5" PointX="6" PointY="6.5" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Export" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Indice" Width="1.5" PointX="11" PointY="1.125" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.LogOcr" Width="1.5" PointX="8.75" PointY="2.25" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Mensagem" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Modelo" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.ModeloProcessamento" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.OrientacaoDocumento" Width="1.5" PointX="3" PointY="15.875" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.PALAVRA_ORIENTACAO" Width="1.5" PointX="12.75" PointY="10.75" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Palavras" Width="1.5" PointX="3" PointY="21.125" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.PalavrasCoordenadasDocumento" Width="1.5" PointX="3" PointY="8.875" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.PARAMETROENTRADA" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Perfil" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.ProcessarTreinamento" Width="1.5" PointX="13.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.PROJETO" Width="1.5" PointX="3.75" PointY="5" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.PROJETO_MODELO" Width="1.5" PointX="6" PointY="10" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Projeto_modelo_evento" Width="1.5" PointX="8.25" PointY="10.375" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Projeto_Usuario" Width="1.5" PointX="6" PointY="3.375" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Tipo_Regex_Extracao" Width="1.5" PointX="8.25" PointY="13.875" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.TipoExtracao" Width="1.5" PointX="6" PointY="20.125" />
+        <EntityTypeShape EntityType="PocOcrDesenvModel.Usuario" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__ControleQ__LogOc__1AD3FDA4" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Documento__Model__6FE99F9F" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Documento__Palav__70DDC3D8" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK_Documento_Palavras" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Projeto_m__IdEve__778AC167" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Indice__IdLog__160F4887" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Orientaca__IdMod__72C60C4A" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Palavras__IdMode__73BA3083" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__PalavrasC__IDMOD__74AE54BC" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK_MODELO" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Tipo_Rege__IdOri__797309D9" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Usuario__PerfilI__7C4F7684" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Projeto_U__IdPro__02FC7413" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK_PROJETO" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Projeto_m__IdPro__787EE5A0" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Tipo_Rege__IdPro__7A672E12" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Projeto_U__IdUsu__03F0984C" />
+        <AssociationConnector Association="PocOcrDesenvModel.FK__Tipo_Rege__TipoE__7B5B524B" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35ED05A8-59B4-499B-91CE-A6CB599A8712}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleApplication18</RootNamespace>
+    <AssemblyName>ConsoleApplication18</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataMatrix.net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataMatrix.net.0.4.2\lib\20\DataMatrix.net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>..\..\..\..\..\Desktop\ImgRecognitionEmGu\ImgRecognitionEmGu\ImgRecognitionEmGu\ImgRecognitionEmGu\bin\Debug\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>..\..\..\..\..\Desktop\ImgRecognitionEmGu\ImgRecognitionEmGu\ImgRecognitionEmGu\ImgRecognitionEmGu\bin\Debug\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GdPicture.NET, Version=8.5.0.33, Culture=neutral, PublicKeyToken=b7f298a24d8f9345, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\GdPicture.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="GdPicture.NET.PDF, Version=1.0.0.45, Culture=neutral, PublicKeyToken=8585d00cf40c0f9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\GdPicture.NET.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.CommonProtos, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.CommonProtos.1.1.0\lib\net45\Google.Api.CommonProtos.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Api.Gax, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.2.0.0-beta02\lib\net45\Google.Api.Gax.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Api.Gax.Grpc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.Grpc.2.0.0-beta02\lib\net45\Google.Api.Gax.Grpc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.27.1\lib\net45\Google.Apis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.27.1\lib\net45\Google.Apis.Auth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.27.1\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.27.1\lib\net45\Google.Apis.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.27.1\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Cloud.Vision.V1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Cloud.Vision.V1.1.0.0-beta03\lib\net45\Google.Cloud.Vision.V1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.3.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.3.0\lib\net45\Google.Protobuf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Grpc.Auth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Auth.1.3.6\lib\net45\Grpc.Auth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Grpc.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.1.3.6\lib\net45\Grpc.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IronPython, Version=2.7.7.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPython.2.7.7\lib\Net45\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules, Version=2.7.7.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPython.2.7.7\lib\Net45\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.SQLite, Version=2.7.7.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPython.2.7.7\lib\Net45\IronPython.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Wpf, Version=2.7.7.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPython.2.7.7\lib\Net45\IronPython.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Codecs.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cmp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Codecs.Cmp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Jb2, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Codecs.Jb2.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Png, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Codecs.Png.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Tif, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Codecs.Tif.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Demos.Dialogs, Version=19.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Demos.Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Documents, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Documents.Raster, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Documents.Raster.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Drawing, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.DocumentWriters, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Forms.DocumentWriters.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Ocr, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Forms.Ocr.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Ocr.Advantage, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\LEADTOOLS 19\Bin\Dotnet4\Win32\Leadtools.Forms.Ocr.Advantage.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic, Version=1.1.2.22, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.1.2\lib\Net45\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.2.22, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.1.2\lib\Net45\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.AspNet, Version=1.1.1.21, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.1.2\lib\Net45\Microsoft.Scripting.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Metadata, Version=1.1.2.22, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.1.2\lib\Net45\Microsoft.Scripting.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nuance.OmniPage.CSDK.ArgTypes, Version=20.20.0.0, Culture=neutral, PublicKeyToken=d277acbc760e5eaf, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nuance\OPCaptureSDK20\Bin\Nuance.OmniPage.CSDK.ArgTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuance.OmniPage.CSDK.CAPI, Version=20.20.0.0, Culture=neutral, PublicKeyToken=d277acbc760e5eaf, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nuance\OPCaptureSDK20\Bin\Nuance.OmniPage.CSDK.CAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuance.OmniPage.CSDK.Objects, Version=20.20.0.0, Culture=neutral, PublicKeyToken=d277acbc760e5eaf, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nuance\OPCaptureSDK20\Bin\Nuance.OmniPage.CSDK.Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuance.OmniPageSDK.IproPlus.JobDesign, Version=20.20.0.0, Culture=neutral, PublicKeyToken=60828db85fc49b42, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nuance\OPCaptureSDK20\Bin\Nuance.OmniPageSDK.IproPlus.JobDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuance.OmniPageSDK.IproPlus.JobDesign.BuiltIn, Version=20.20.0.0, Culture=neutral, PublicKeyToken=60828db85fc49b42, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nuance\OPCaptureSDK20\Bin\Nuance.OmniPageSDK.IproPlus.JobDesign.BuiltIn.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuance.OmniPageSDK.IproPlus.JobItem, Version=20.20.0.0, Culture=neutral, PublicKeyToken=60828db85fc49b42, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nuance\OPCaptureSDK20\Bin\Nuance.OmniPageSDK.IproPlus.JobItem.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuance.OmniPageSDK.IproPlus.JobService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=60828db85fc49b42, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nuance\OPCaptureSDK20\Bin\Nuance.OmniPageSDK.IproPlus.JobService.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuance.OmniPageSDK.IproPlus.Marshaler, Version=20.20.0.0, Culture=neutral, PublicKeyToken=60828db85fc49b42, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nuance\OPCaptureSDK20\Bin\Nuance.OmniPageSDK.IproPlus.Marshaler.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuance.OmniPageSDK.ToolBoxes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=60828db85fc49b42, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nuance\OPCaptureSDK20\Bin\Nuance.OmniPageSDK.ToolBoxes.dll</HintPath>
+    </Reference>
+    <Reference Include="RecPDFNet, Version=20.20.0.0, Culture=neutral, PublicKeyToken=56ea0d7a040a6bd9, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nuance\OPCaptureSDK20\Bin\RecPDFNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tesseract, Version=0.0.0.0, Culture=neutral, PublicKeyToken=ebeb3d86bef60cbe, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tesseract.3.2.0-alpha2\lib\net451\Tesseract.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\net45\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\net45\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CanhotosLeitura.cs" />
+    <Compile Include="CONFIGURACAO.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ControleQualidadeLog.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Device.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Documento.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="documentocaptura.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DrawMatches.cs" />
+    <Compile Include="Eventos.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Evento\EnumRetornoEvento.cs" />
+    <Compile Include="Evento\EnumEntrada.cs" />
+    <Compile Include="Evento\RetornoEventoDTO.cs" />
+    <Compile Include="Evento\a.cs" />
+    <Compile Include="Evento\_2132_1013_19.cs" />
+    <Compile Include="Evento\_2127_1028_4064.cs" />
+    <Compile Include="Evento\_2096_1021_4052.cs" />
+    <Compile Include="Evento\_2095_1013_4046.cs" />
+    <Compile Include="Evento\_2082_1014_4046.cs" />
+    <Compile Include="Evento\_2054_1008_3033.cs" />
+    <Compile Include="Evento\_2056_1008_3034.cs" />
+    <Compile Include="Evento\_2057_1008_3035.cs" />
+    <Compile Include="Evento\_2059_1008_3035.cs" />
+    <Compile Include="Evento\_2060_1008_3037.cs" />
+    <Compile Include="Evento\_2055_1008_3032.cs" />
+    <Compile Include="Evento\_2045_1004_3027.cs" />
+    <Compile Include="Evento\IEvento.cs" />
+    <Compile Include="Evento\_2073_1005_4038.cs" />
+    <Compile Include="Evento\_2074_1005_4039.cs" />
+    <Compile Include="Evento\_2075_1005_4040.cs" />
+    <Compile Include="Evento\_2076_1005_4041.cs" />
+    <Compile Include="Evento\_2091_1005_4042 .cs" />
+    <Compile Include="Evento\_2077_1005_4043.cs" />
+    <Compile Include="Evento\_2108_1013_4048.cs" />
+    <Compile Include="Export.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\EnumOcr.cs" />
+    <Compile Include="Factory\FactoryOcr.cs" />
+    <Compile Include="Indice.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Licenca.cs" />
+    <Compile Include="LogOcr.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mensagem.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloProcessamento.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Coordenadas.cs" />
+    <Compile Include="Model\PosicaoLabel.cs" />
+    <Compile Include="OcrImpletentacao\GoogleOcr.cs" />
+    <Compile Include="Installer1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installer1.Designer.cs">
+      <DependentUpon>Installer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOcr.cs" />
+    <Compile Include="OcrImpletentacao\LeadToolsOCR.cs" />
+    <Compile Include="OcrImpletentacao\OmniPageOcr.cs" />
+    <Compile Include="OcrImpletentacao\TesseractOcr.cs" />
+    <Compile Include="OrientacaoDocumento.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Palavras.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PalavrasCoordenadasDocumento.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PalavrasOcr.cs" />
+    <Compile Include="PALAVRA_ORIENTACAO.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARAMETROENTRADA.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocOcrEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PocOcrEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocOcrEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocOcrEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PocOcrEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessarTreinamento.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PROJETO.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJETO_MODELO.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Projeto_modelo_evento.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Projeto_Usuario.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceCanhotos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServiceCanhotos.Designer.cs">
+      <DependentUpon>ServiceCanhotos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipoExtracao.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Regex_Extracao.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>PocOcrEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsIntegracao\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Imagem\alerta.jpg" />
+    <Content Include="Content\Imagem\icon_inprogress.gif" />
+    <Content Include="ModelosClassificador\1175ecc0-4c22-4f47-a8d1-d93cc5c2028f.bmp" />
+    <Content Include="ModelosClassificador\217176ce-617a-4934-b02e-1b1470d316e5.bmp" />
+    <Content Include="ModelosClassificador\3b679d7b-b595-4863-9a0d-ebb26fb971f8.bmp" />
+    <Content Include="ModelosClassificador\6abf951a-2aff-4643-912e-ae3545d31aab.bmp" />
+    <Content Include="ModelosClassificador\6c9ac917-9e9c-4288-a236-63fbd6bd4d0f.bmp" />
+    <Content Include="ModelosClassificador\6cc66e4a-940d-4711-93d3-c56742a99133.bmp" />
+    <Content Include="ModelosClassificador\735cf864-912e-4e81-8c73-315579fad92f.bmp" />
+    <Content Include="ModelosClassificador\87787ef2-26c0-420f-a591-57e3c0715d8d.bmp" />
+    <Content Include="ModelosClassificador\a0b603d8-c303-4db4-9df9-0b9a4acb255e.bmp" />
+    <Content Include="ModelosClassificador\c20b0d56-58a8-43e1-bf8c-f654881f2230.bmp" />
+    <Content Include="ModelosClassificador\c6833b56-465d-4877-a5ce-64631122f3f4.bmp" />
+    <Content Include="ModelosClassificador\da1a33ce-8d73-40bf-a1f5-9cf74282aeee.bmp" />
+    <Content Include="ModelosClassificador\f8d6e3a1-8d46-4a8b-90e8-8d09a1330c25.bmp" />
+    <Content Include="PocOcrEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PocOcrEntities.edmx</DependentUpon>
+      <LastGenOutput>PocOcrEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PocOcrEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PocOcrEntities.edmx</DependentUpon>
+      <LastGenOutput>PocOcrEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="saida.txt" />
+    <Content Include="sum.py" />
+    <Content Include="x64\liblept172.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\libtesseract304.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\liblept172.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\libtesseract304.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="x86\app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Content\tessdata\eng.DangAmbigs" />
+    <None Include="Content\tessdata\eng.freq-dawg" />
+    <None Include="Content\tessdata\eng.inttemp" />
+    <None Include="Content\tessdata\eng.normproto" />
+    <None Include="Content\tessdata\eng.pffmtable" />
+    <None Include="Content\tessdata\eng.traineddata" />
+    <None Include="Content\tessdata\eng.unicharset" />
+    <None Include="Content\tessdata\eng.user-words" />
+    <None Include="Content\tessdata\eng.word-dawg" />
+    <None Include="GdPicture\Idiomas\por.traineddata" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="PocOcrEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PocOcrEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PocOcrEntities.edmx.diagram">
+      <DependentUpon>PocOcrEntities.edmx</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsIntegracao\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsIntegracao\wsIntegracao.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsIntegracao\wsIntegracao.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://www.clouddocs.com.br/homolog/wsIntegracao.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsIntegracao\</RelPath>
+      <UpdateFromURL>https://www.clouddocs.com.br/homolog/wsIntegracao.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ConsoleApplication18_wsIntegracao_WSIntegracao</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Grpc.Core.1.3.6\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.1.3.6\build\net45\Grpc.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Grpc.Core.1.3.6\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.1.3.6\build\net45\Grpc.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\MSBuild.NugetContentRestore.0.1.6\build\net40\MSBuild.NugetContentRestore.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.NugetContentRestore.0.1.6\build\net40\MSBuild.NugetContentRestore.targets'))" />
+  </Target>
+  <Target Name="BeforeBuild">
+    <NugetContentRestoreTask SolutionDir="$(SolutionDir)" ProjectDir="$(ProjectDir)" />
+  </Target>
+  <Import Project="..\packages\MSBuild.NugetContentRestore.0.1.6\build\net40\MSBuild.NugetContentRestore.targets" Condition="Exists('..\packages\MSBuild.NugetContentRestore.0.1.6\build\net40\MSBuild.NugetContentRestore.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

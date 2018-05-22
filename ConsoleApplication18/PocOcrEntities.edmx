@@ -1,0 +1,1596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PocOcrDesenvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CONFIGURACAO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPO" Type="varchar" MaxLength="255" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+          <Property Name="Padrao" Type="bit" />
+        </EntityType>
+        <EntityType Name="ControleQualidadeLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="caminho" Type="nvarchar(max)" />
+          <Property Name="data" Type="date" />
+          <Property Name="processado" Type="bit" />
+          <Property Name="exportId" Type="int" />
+          <Property Name="projetoId" Type="int" />
+          <Property Name="LogOcrId" Type="int" />
+          <Property Name="usuario" Type="nvarchar(max)" />
+          <Property Name="indice" Type="nvarchar(max)" />
+          <Property Name="liberado" Type="bit" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Numero" Type="varchar" MaxLength="255" />
+          <Property Name="Profile" Type="varchar" MaxLength="255" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Documento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModeloId" Type="int" Nullable="false" />
+          <Property Name="NomeDocumento" Type="varchar" MaxLength="200" />
+          <Property Name="Valor" Type="nvarchar(max)" />
+          <Property Name="PalavraId" Type="int" />
+          <Property Name="column_name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="documentocaptura">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="caminhoEntrada" Type="varchar(max)" />
+          <Property Name="caminhoSaida" Type="varchar(max)" />
+          <Property Name="caminhoRaiz" Type="varchar(max)" />
+          <Property Name="ProjetoId" Type="int" />
+          <Property Name="ProjetoNome" Type="varchar(max)" />
+          <Property Name="lock" Type="bit" />
+          <Property Name="Data" Type="datetime" />
+          <Property Name="caminhoArquivo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Eventos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Evento" Type="nvarchar(max)" />
+          <Property Name="codigo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Export">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Url" Type="nvarchar(max)" />
+          <Property Name="Senha" Type="nvarchar(max)" />
+          <Property Name="Usuario" Type="nvarchar(max)" />
+          <Property Name="Apelido" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Indice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Indice" Type="nvarchar(max)" />
+          <Property Name="Valor" Type="nvarchar(max)" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdLog" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogOcr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Data" Type="datetime" />
+          <Property Name="Resultado" Type="nvarchar(max)" />
+          <Property Name="nome" Type="nchar" MaxLength="100" />
+          <Property Name="Motor" Type="nchar" MaxLength="100" />
+          <Property Name="Modelo" Type="nchar" MaxLength="100" />
+          <Property Name="IdDocumento" Type="nchar" MaxLength="100" />
+          <Property Name="Indice" Type="nvarchar(max)" />
+          <Property Name="ProjetoId" Type="int" />
+          <Property Name="UsuarioId" Type="int" />
+          <Property Name="usuario" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mensagem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mensagem" Type="nvarchar(max)" />
+          <Property Name="Lido" Type="bit" />
+          <Property Name="UsuarioId" Type="int" />
+          <Property Name="Data" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Modelo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+          <Property Name="CNPJ" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ModeloProcessamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Processar" Type="bit" />
+          <Property Name="ModeloId" Type="int" />
+          <Property Name="ProjetoId" Type="int" />
+        </EntityType>
+        <EntityType Name="OrientacaoDocumento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="x" Type="int" />
+          <Property Name="y" Type="int" />
+          <Property Name="width" Type="int" />
+          <Property Name="height" Type="int" />
+          <Property Name="IdModelo" Type="int" />
+          <Property Name="nome" Type="nchar" MaxLength="100" />
+          <Property Name="Palavra" Type="nvarchar(max)" />
+          <Property Name="Tamanho" Type="int" />
+          <Property Name="SomenteNumeros" Type="bit" />
+          <Property Name="Regex" Type="varchar" MaxLength="150" />
+          <Property Name="Barcode" Type="bit" />
+          <Property Name="QrCode" Type="bit" />
+          <Property Name="Evento" Type="bit" />
+          <Property Name="PARAMETROENTRADA" Type="nvarchar(max)" />
+          <Property Name="EspacoBranco" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PALAVRA_ORIENTACAO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPALAVRA" Type="int" />
+          <Property Name="IDORIENTACAO" Type="int" />
+          <Property Name="IDDOCUMENTO" Type="int" />
+          <Property Name="IDREGISTRO" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Palavras">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdModelo" Type="int" />
+          <Property Name="Palavra" Type="varchar" MaxLength="255" />
+          <Property Name="Contem" Type="bit" />
+          <Property Name="Ancora" Type="bit" />
+          <Property Name="Barcode" Type="bit" />
+          <Property Name="QRcode" Type="bit" />
+          <Property Name="GuardarValorIndexacao" Type="bit" />
+          <Property Name="porcentagemMin" Type="int" />
+          <Property Name="porcentagemmax" Type="int" />
+          <Property Name="pagina" Type="int" />
+        </EntityType>
+        <EntityType Name="PalavrasCoordenadasDocumento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="x" Type="int" />
+          <Property Name="y" Type="int" />
+          <Property Name="width" Type="int" />
+          <Property Name="height" Type="int" />
+          <Property Name="texto" Type="varchar(max)" />
+          <Property Name="IDMODELO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PARAMETROENTRADA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Tipo" Type="varchar" MaxLength="200" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Nome" Type="varchar(max)" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="data" Type="date" />
+        </EntityType>
+        <EntityType Name="ProcessarTreinamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModeloId" Type="int" />
+          <Property Name="data" Type="datetime" />
+          <Property Name="verificado" Type="bit" />
+          <Property Name="Texto" Type="nvarchar(max)" />
+          <Property Name="Modelo" Type="nvarchar(max)" />
+          <Property Name="caminho" Type="nvarchar(max)" />
+          <Property Name="ProjetoId" Type="int" />
+        </EntityType>
+        <EntityType Name="PROJETO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ConfiguracaoID" Type="int" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="agrupamento" Type="bit" />
+          <Property Name="exportId" Type="int" />
+          <Property Name="utilizarMineracao" Type="bit" />
+          <Property Name="arquivo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PROJETO_MODELO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PROJETO_ID" Type="int" Nullable="false" />
+          <Property Name="MODELO_ID" Type="int" Nullable="false" />
+          <Property Name="Padrao" Type="varchar(max)" />
+          <Property Name="ControleQualidade" Type="bit" />
+        </EntityType>
+        <EntityType Name="Projeto_modelo_evento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Data" Type="date" />
+          <Property Name="IdEvento" Type="int" Nullable="false" />
+          <Property Name="IdProjetoModelo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Projeto_Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdProjeto" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="data" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tipo_Regex_Extracao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoExtracaoId" Type="int" Nullable="false" />
+          <Property Name="IdProjetoModelo" Type="int" Nullable="false" />
+          <Property Name="IdOrientacaoModelo" Type="int" Nullable="false" />
+          <Property Name="ordem" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoExtracao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Regex" Type="varchar" MaxLength="255" />
+          <Property Name="Tipo" Type="varchar" MaxLength="255" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Usados" Type="int" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="login" Type="varchar" MaxLength="200" />
+          <Property Name="senha" Type="varchar" MaxLength="200" />
+          <Property Name="email" Type="nchar" MaxLength="200" />
+          <Property Name="PerfilId" Type="int" Nullable="false" />
+          <Property Name="Profile" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__ControleQ__LogOc__1AD3FDA4">
+          <End Role="LogOcr" Type="Self.LogOcr" Multiplicity="0..1" />
+          <End Role="ControleQualidadeLog" Type="Self.ControleQualidadeLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogOcr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ControleQualidadeLog">
+              <PropertyRef Name="LogOcrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__Model__6FE99F9F">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="ModeloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__Palav__70DDC3D8">
+          <End Role="Palavras" Type="Self.Palavras" Multiplicity="0..1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Palavras">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="PalavraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Indice__IdLog__160F4887">
+          <End Role="LogOcr" Type="Self.LogOcr" Multiplicity="1" />
+          <End Role="Indice" Type="Self.Indice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogOcr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Indice">
+              <PropertyRef Name="IdLog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orientaca__IdMod__72C60C4A">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+          <End Role="OrientacaoDocumento" Type="Self.OrientacaoDocumento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrientacaoDocumento">
+              <PropertyRef Name="IdModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Palavras__IdMode__73BA3083">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+          <End Role="Palavras" Type="Self.Palavras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Palavras">
+              <PropertyRef Name="IdModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PalavrasC__IDMOD__74AE54BC">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="1" />
+          <End Role="PalavrasCoordenadasDocumento" Type="Self.PalavrasCoordenadasDocumento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PalavrasCoordenadasDocumento">
+              <PropertyRef Name="IDMODELO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Projeto_m__IdEve__778AC167">
+          <End Role="Eventos" Type="Self.Eventos" Multiplicity="1" />
+          <End Role="Projeto_modelo_evento" Type="Self.Projeto_modelo_evento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Eventos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Projeto_modelo_evento">
+              <PropertyRef Name="IdEvento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Projeto_m__IdPro__787EE5A0">
+          <End Role="PROJETO_MODELO" Type="Self.PROJETO_MODELO" Multiplicity="1" />
+          <End Role="Projeto_modelo_evento" Type="Self.Projeto_modelo_evento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROJETO_MODELO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Projeto_modelo_evento">
+              <PropertyRef Name="IdProjetoModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Projeto_U__IdPro__02FC7413">
+          <End Role="PROJETO" Type="Self.PROJETO" Multiplicity="1" />
+          <End Role="Projeto_Usuario" Type="Self.Projeto_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROJETO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Projeto_Usuario">
+              <PropertyRef Name="IdProjeto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Projeto_U__IdUsu__03F0984C">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Projeto_Usuario" Type="Self.Projeto_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Projeto_Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tipo_Rege__IdOri__797309D9">
+          <End Role="OrientacaoDocumento" Type="Self.OrientacaoDocumento" Multiplicity="1" />
+          <End Role="Tipo_Regex_Extracao" Type="Self.Tipo_Regex_Extracao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrientacaoDocumento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tipo_Regex_Extracao">
+              <PropertyRef Name="IdOrientacaoModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tipo_Rege__IdPro__7A672E12">
+          <End Role="PROJETO_MODELO" Type="Self.PROJETO_MODELO" Multiplicity="1" />
+          <End Role="Tipo_Regex_Extracao" Type="Self.Tipo_Regex_Extracao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROJETO_MODELO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tipo_Regex_Extracao">
+              <PropertyRef Name="IdProjetoModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tipo_Rege__TipoE__7B5B524B">
+          <End Role="TipoExtracao" Type="Self.TipoExtracao" Multiplicity="1" />
+          <End Role="Tipo_Regex_Extracao" Type="Self.Tipo_Regex_Extracao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoExtracao">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tipo_Regex_Extracao">
+              <PropertyRef Name="TipoExtracaoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__PerfilI__7C4F7684">
+          <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="PerfilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Documento_Palavras">
+          <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+          <End Role="Documento1" Type="Self.Documento" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Documento">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Documento1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MODELO">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="1" />
+          <End Role="PROJETO_MODELO" Type="Self.PROJETO_MODELO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROJETO_MODELO">
+              <PropertyRef Name="MODELO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROJETO">
+          <End Role="PROJETO" Type="Self.PROJETO" Multiplicity="1" />
+          <End Role="PROJETO_MODELO" Type="Self.PROJETO_MODELO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROJETO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROJETO_MODELO">
+              <PropertyRef Name="PROJETO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PocOcrDesenvModelStoreContainer">
+          <EntitySet Name="CONFIGURACAO" EntityType="Self.CONFIGURACAO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ControleQualidadeLog" EntityType="Self.ControleQualidadeLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="documentocaptura" EntityType="Self.documentocaptura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eventos" EntityType="Self.Eventos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Export" EntityType="Self.Export" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Indice" EntityType="Self.Indice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogOcr" EntityType="Self.LogOcr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mensagem" EntityType="Self.Mensagem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Modelo" EntityType="Self.Modelo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ModeloProcessamento" EntityType="Self.ModeloProcessamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrientacaoDocumento" EntityType="Self.OrientacaoDocumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PALAVRA_ORIENTACAO" EntityType="Self.PALAVRA_ORIENTACAO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Palavras" EntityType="Self.Palavras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PalavrasCoordenadasDocumento" EntityType="Self.PalavrasCoordenadasDocumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PARAMETROENTRADA" EntityType="Self.PARAMETROENTRADA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProcessarTreinamento" EntityType="Self.ProcessarTreinamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROJETO" EntityType="Self.PROJETO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROJETO_MODELO" EntityType="Self.PROJETO_MODELO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projeto_modelo_evento" EntityType="Self.Projeto_modelo_evento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projeto_Usuario" EntityType="Self.Projeto_Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo_Regex_Extracao" EntityType="Self.Tipo_Regex_Extracao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoExtracao" EntityType="Self.TipoExtracao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ControleQ__LogOc__1AD3FDA4" Association="Self.FK__ControleQ__LogOc__1AD3FDA4">
+            <End Role="LogOcr" EntitySet="LogOcr" />
+            <End Role="ControleQualidadeLog" EntitySet="ControleQualidadeLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__Model__6FE99F9F" Association="Self.FK__Documento__Model__6FE99F9F">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__Palav__70DDC3D8" Association="Self.FK__Documento__Palav__70DDC3D8">
+            <End Role="Palavras" EntitySet="Palavras" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Indice__IdLog__160F4887" Association="Self.FK__Indice__IdLog__160F4887">
+            <End Role="LogOcr" EntitySet="LogOcr" />
+            <End Role="Indice" EntitySet="Indice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orientaca__IdMod__72C60C4A" Association="Self.FK__Orientaca__IdMod__72C60C4A">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="OrientacaoDocumento" EntitySet="OrientacaoDocumento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Palavras__IdMode__73BA3083" Association="Self.FK__Palavras__IdMode__73BA3083">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Palavras" EntitySet="Palavras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PalavrasC__IDMOD__74AE54BC" Association="Self.FK__PalavrasC__IDMOD__74AE54BC">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="PalavrasCoordenadasDocumento" EntitySet="PalavrasCoordenadasDocumento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Projeto_m__IdEve__778AC167" Association="Self.FK__Projeto_m__IdEve__778AC167">
+            <End Role="Eventos" EntitySet="Eventos" />
+            <End Role="Projeto_modelo_evento" EntitySet="Projeto_modelo_evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Projeto_m__IdPro__787EE5A0" Association="Self.FK__Projeto_m__IdPro__787EE5A0">
+            <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+            <End Role="Projeto_modelo_evento" EntitySet="Projeto_modelo_evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Projeto_U__IdPro__02FC7413" Association="Self.FK__Projeto_U__IdPro__02FC7413">
+            <End Role="PROJETO" EntitySet="PROJETO" />
+            <End Role="Projeto_Usuario" EntitySet="Projeto_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Projeto_U__IdUsu__03F0984C" Association="Self.FK__Projeto_U__IdUsu__03F0984C">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Projeto_Usuario" EntitySet="Projeto_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tipo_Rege__IdOri__797309D9" Association="Self.FK__Tipo_Rege__IdOri__797309D9">
+            <End Role="OrientacaoDocumento" EntitySet="OrientacaoDocumento" />
+            <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tipo_Rege__IdPro__7A672E12" Association="Self.FK__Tipo_Rege__IdPro__7A672E12">
+            <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+            <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tipo_Rege__TipoE__7B5B524B" Association="Self.FK__Tipo_Rege__TipoE__7B5B524B">
+            <End Role="TipoExtracao" EntitySet="TipoExtracao" />
+            <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__PerfilI__7C4F7684" Association="Self.FK__Usuario__PerfilI__7C4F7684">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Documento_Palavras" Association="Self.FK_Documento_Palavras">
+            <End Role="Documento" EntitySet="Documento" />
+            <End Role="Documento1" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MODELO" Association="Self.FK_MODELO">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROJETO" Association="Self.FK_PROJETO">
+            <End Role="PROJETO" EntitySet="PROJETO" />
+            <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PocOcrDesenvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entidade" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CONFIGURACAO" EntityType="PocOcrDesenvModel.CONFIGURACAO" />
+          <EntitySet Name="ControleQualidadeLog" EntityType="PocOcrDesenvModel.ControleQualidadeLog" />
+          <EntitySet Name="Device" EntityType="PocOcrDesenvModel.Device" />
+          <EntitySet Name="Documento" EntityType="PocOcrDesenvModel.Documento" />
+          <EntitySet Name="documentocaptura" EntityType="PocOcrDesenvModel.documentocaptura" />
+          <EntitySet Name="Eventos" EntityType="PocOcrDesenvModel.Eventos" />
+          <EntitySet Name="Export" EntityType="PocOcrDesenvModel.Export" />
+          <EntitySet Name="Indice" EntityType="PocOcrDesenvModel.Indice" />
+          <EntitySet Name="LogOcr" EntityType="PocOcrDesenvModel.LogOcr" />
+          <EntitySet Name="Mensagem" EntityType="PocOcrDesenvModel.Mensagem" />
+          <EntitySet Name="Modelo" EntityType="PocOcrDesenvModel.Modelo" />
+          <EntitySet Name="ModeloProcessamento" EntityType="PocOcrDesenvModel.ModeloProcessamento" />
+          <EntitySet Name="OrientacaoDocumento" EntityType="PocOcrDesenvModel.OrientacaoDocumento" />
+          <EntitySet Name="PALAVRA_ORIENTACAO" EntityType="PocOcrDesenvModel.PALAVRA_ORIENTACAO" />
+          <EntitySet Name="Palavras" EntityType="PocOcrDesenvModel.Palavras" />
+          <EntitySet Name="PalavrasCoordenadasDocumento" EntityType="PocOcrDesenvModel.PalavrasCoordenadasDocumento" />
+          <EntitySet Name="PARAMETROENTRADA" EntityType="PocOcrDesenvModel.PARAMETROENTRADA" />
+          <EntitySet Name="Perfil" EntityType="PocOcrDesenvModel.Perfil" />
+          <EntitySet Name="ProcessarTreinamento" EntityType="PocOcrDesenvModel.ProcessarTreinamento" />
+          <EntitySet Name="PROJETO" EntityType="PocOcrDesenvModel.PROJETO" />
+          <EntitySet Name="PROJETO_MODELO" EntityType="PocOcrDesenvModel.PROJETO_MODELO" />
+          <EntitySet Name="Projeto_modelo_evento" EntityType="PocOcrDesenvModel.Projeto_modelo_evento" />
+          <EntitySet Name="Projeto_Usuario" EntityType="PocOcrDesenvModel.Projeto_Usuario" />
+          <EntitySet Name="Tipo_Regex_Extracao" EntityType="PocOcrDesenvModel.Tipo_Regex_Extracao" />
+          <EntitySet Name="TipoExtracao" EntityType="PocOcrDesenvModel.TipoExtracao" />
+          <EntitySet Name="Usuario" EntityType="PocOcrDesenvModel.Usuario" />
+          <AssociationSet Name="FK__ControleQ__LogOc__1AD3FDA4" Association="PocOcrDesenvModel.FK__ControleQ__LogOc__1AD3FDA4">
+            <End Role="LogOcr" EntitySet="LogOcr" />
+            <End Role="ControleQualidadeLog" EntitySet="ControleQualidadeLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__Model__6FE99F9F" Association="PocOcrDesenvModel.FK__Documento__Model__6FE99F9F">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__Palav__70DDC3D8" Association="PocOcrDesenvModel.FK__Documento__Palav__70DDC3D8">
+            <End Role="Palavras" EntitySet="Palavras" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Documento_Palavras" Association="PocOcrDesenvModel.FK_Documento_Palavras">
+            <End Role="Documento" EntitySet="Documento" />
+            <End Role="Documento1" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Projeto_m__IdEve__778AC167" Association="PocOcrDesenvModel.FK__Projeto_m__IdEve__778AC167">
+            <End Role="Eventos" EntitySet="Eventos" />
+            <End Role="Projeto_modelo_evento" EntitySet="Projeto_modelo_evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Indice__IdLog__160F4887" Association="PocOcrDesenvModel.FK__Indice__IdLog__160F4887">
+            <End Role="LogOcr" EntitySet="LogOcr" />
+            <End Role="Indice" EntitySet="Indice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orientaca__IdMod__72C60C4A" Association="PocOcrDesenvModel.FK__Orientaca__IdMod__72C60C4A">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="OrientacaoDocumento" EntitySet="OrientacaoDocumento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Palavras__IdMode__73BA3083" Association="PocOcrDesenvModel.FK__Palavras__IdMode__73BA3083">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Palavras" EntitySet="Palavras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PalavrasC__IDMOD__74AE54BC" Association="PocOcrDesenvModel.FK__PalavrasC__IDMOD__74AE54BC">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="PalavrasCoordenadasDocumento" EntitySet="PalavrasCoordenadasDocumento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MODELO" Association="PocOcrDesenvModel.FK_MODELO">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tipo_Rege__IdOri__797309D9" Association="PocOcrDesenvModel.FK__Tipo_Rege__IdOri__797309D9">
+            <End Role="OrientacaoDocumento" EntitySet="OrientacaoDocumento" />
+            <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__PerfilI__7C4F7684" Association="PocOcrDesenvModel.FK__Usuario__PerfilI__7C4F7684">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Projeto_U__IdPro__02FC7413" Association="PocOcrDesenvModel.FK__Projeto_U__IdPro__02FC7413">
+            <End Role="PROJETO" EntitySet="PROJETO" />
+            <End Role="Projeto_Usuario" EntitySet="Projeto_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROJETO" Association="PocOcrDesenvModel.FK_PROJETO">
+            <End Role="PROJETO" EntitySet="PROJETO" />
+            <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Projeto_m__IdPro__787EE5A0" Association="PocOcrDesenvModel.FK__Projeto_m__IdPro__787EE5A0">
+            <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+            <End Role="Projeto_modelo_evento" EntitySet="Projeto_modelo_evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tipo_Rege__IdPro__7A672E12" Association="PocOcrDesenvModel.FK__Tipo_Rege__IdPro__7A672E12">
+            <End Role="PROJETO_MODELO" EntitySet="PROJETO_MODELO" />
+            <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Projeto_U__IdUsu__03F0984C" Association="PocOcrDesenvModel.FK__Projeto_U__IdUsu__03F0984C">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Projeto_Usuario" EntitySet="Projeto_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tipo_Rege__TipoE__7B5B524B" Association="PocOcrDesenvModel.FK__Tipo_Rege__TipoE__7B5B524B">
+            <End Role="TipoExtracao" EntitySet="TipoExtracao" />
+            <End Role="Tipo_Regex_Extracao" EntitySet="Tipo_Regex_Extracao" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CONFIGURACAO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
+          <Property Name="Padrao" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ControleQualidadeLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="caminho" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="data" Type="DateTime" Precision="0" />
+          <Property Name="processado" Type="Boolean" />
+          <Property Name="exportId" Type="Int32" />
+          <Property Name="projetoId" Type="Int32" />
+          <Property Name="LogOcrId" Type="Int32" />
+          <Property Name="usuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="indice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="liberado" Type="Boolean" />
+          <NavigationProperty Name="LogOcr" Relationship="PocOcrDesenvModel.FK__ControleQ__LogOc__1AD3FDA4" FromRole="ControleQualidadeLog" ToRole="LogOcr" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Numero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Profile" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Documento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModeloId" Type="Int32" Nullable="false" />
+          <Property Name="NomeDocumento" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Valor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PalavraId" Type="Int32" />
+          <Property Name="column_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Modelo" Relationship="PocOcrDesenvModel.FK__Documento__Model__6FE99F9F" FromRole="Documento" ToRole="Modelo" />
+          <NavigationProperty Name="Palavras" Relationship="PocOcrDesenvModel.FK__Documento__Palav__70DDC3D8" FromRole="Documento" ToRole="Palavras" />
+          <NavigationProperty Name="Documento1" Relationship="PocOcrDesenvModel.FK_Documento_Palavras" FromRole="Documento" ToRole="Documento1" />
+          <NavigationProperty Name="Documento2" Relationship="PocOcrDesenvModel.FK_Documento_Palavras" FromRole="Documento1" ToRole="Documento" />
+        </EntityType>
+        <EntityType Name="documentocaptura">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="caminhoEntrada" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="caminhoSaida" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="caminhoRaiz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProjetoId" Type="Int32" />
+          <Property Name="ProjetoNome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lock" Type="Boolean" />
+          <Property Name="Data" Type="DateTime" Precision="3" />
+          <Property Name="caminhoArquivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Eventos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Evento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="codigo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Projeto_modelo_evento" Relationship="PocOcrDesenvModel.FK__Projeto_m__IdEve__778AC167" FromRole="Eventos" ToRole="Projeto_modelo_evento" />
+        </EntityType>
+        <EntityType Name="Export">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Senha" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Usuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Apelido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Indice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Indice1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Valor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLog" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LogOcr" Relationship="PocOcrDesenvModel.FK__Indice__IdLog__160F4887" FromRole="Indice" ToRole="LogOcr" />
+        </EntityType>
+        <EntityType Name="LogOcr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="DateTime" Precision="3" />
+          <Property Name="Resultado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="nome" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Motor" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Modelo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="IdDocumento" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Indice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjetoId" Type="Int32" />
+          <Property Name="UsuarioId" Type="Int32" />
+          <Property Name="usuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ControleQualidadeLog" Relationship="PocOcrDesenvModel.FK__ControleQ__LogOc__1AD3FDA4" FromRole="LogOcr" ToRole="ControleQualidadeLog" />
+          <NavigationProperty Name="Indice1" Relationship="PocOcrDesenvModel.FK__Indice__IdLog__160F4887" FromRole="LogOcr" ToRole="Indice" />
+        </EntityType>
+        <EntityType Name="Mensagem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mensagem1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lido" Type="Boolean" />
+          <Property Name="UsuarioId" Type="Int32" />
+          <Property Name="Data" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Modelo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CNPJ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Documento" Relationship="PocOcrDesenvModel.FK__Documento__Model__6FE99F9F" FromRole="Modelo" ToRole="Documento" />
+          <NavigationProperty Name="OrientacaoDocumento" Relationship="PocOcrDesenvModel.FK__Orientaca__IdMod__72C60C4A" FromRole="Modelo" ToRole="OrientacaoDocumento" />
+          <NavigationProperty Name="Palavras" Relationship="PocOcrDesenvModel.FK__Palavras__IdMode__73BA3083" FromRole="Modelo" ToRole="Palavras" />
+          <NavigationProperty Name="PalavrasCoordenadasDocumento" Relationship="PocOcrDesenvModel.FK__PalavrasC__IDMOD__74AE54BC" FromRole="Modelo" ToRole="PalavrasCoordenadasDocumento" />
+          <NavigationProperty Name="PROJETO_MODELO" Relationship="PocOcrDesenvModel.FK_MODELO" FromRole="Modelo" ToRole="PROJETO_MODELO" />
+        </EntityType>
+        <EntityType Name="ModeloProcessamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Processar" Type="Boolean" />
+          <Property Name="ModeloId" Type="Int32" />
+          <Property Name="ProjetoId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OrientacaoDocumento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="x" Type="Int32" />
+          <Property Name="y" Type="Int32" />
+          <Property Name="width" Type="Int32" />
+          <Property Name="height" Type="Int32" />
+          <Property Name="IdModelo" Type="Int32" />
+          <Property Name="nome" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Palavra" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tamanho" Type="Int32" />
+          <Property Name="SomenteNumeros" Type="Boolean" />
+          <Property Name="Regex" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Barcode" Type="Boolean" />
+          <Property Name="QrCode" Type="Boolean" />
+          <Property Name="Evento" Type="Boolean" />
+          <Property Name="PARAMETROENTRADA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EspacoBranco" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Modelo" Relationship="PocOcrDesenvModel.FK__Orientaca__IdMod__72C60C4A" FromRole="OrientacaoDocumento" ToRole="Modelo" />
+          <NavigationProperty Name="Tipo_Regex_Extracao" Relationship="PocOcrDesenvModel.FK__Tipo_Rege__IdOri__797309D9" FromRole="OrientacaoDocumento" ToRole="Tipo_Regex_Extracao" />
+        </EntityType>
+        <EntityType Name="PALAVRA_ORIENTACAO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPALAVRA" Type="Int32" />
+          <Property Name="IDORIENTACAO" Type="Int32" />
+          <Property Name="IDDOCUMENTO" Type="Int32" />
+          <Property Name="IDREGISTRO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Palavras">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdModelo" Type="Int32" />
+          <Property Name="Palavra" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Contem" Type="Boolean" />
+          <Property Name="Ancora" Type="Boolean" />
+          <Property Name="Barcode" Type="Boolean" />
+          <Property Name="QRcode" Type="Boolean" />
+          <Property Name="GuardarValorIndexacao" Type="Boolean" />
+          <Property Name="porcentagemMin" Type="Int32" />
+          <Property Name="porcentagemmax" Type="Int32" />
+          <Property Name="pagina" Type="Int32" />
+          <NavigationProperty Name="Documento" Relationship="PocOcrDesenvModel.FK__Documento__Palav__70DDC3D8" FromRole="Palavras" ToRole="Documento" />
+          <NavigationProperty Name="Modelo" Relationship="PocOcrDesenvModel.FK__Palavras__IdMode__73BA3083" FromRole="Palavras" ToRole="Modelo" />
+        </EntityType>
+        <EntityType Name="PalavrasCoordenadasDocumento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="x" Type="Int32" />
+          <Property Name="y" Type="Int32" />
+          <Property Name="width" Type="Int32" />
+          <Property Name="height" Type="Int32" />
+          <Property Name="texto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IDMODELO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Modelo" Relationship="PocOcrDesenvModel.FK__PalavrasC__IDMOD__74AE54BC" FromRole="PalavrasCoordenadasDocumento" ToRole="Modelo" />
+        </EntityType>
+        <EntityType Name="PARAMETROENTRADA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Tipo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="data" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Usuario" Relationship="PocOcrDesenvModel.FK__Usuario__PerfilI__7C4F7684" FromRole="Perfil" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="ProcessarTreinamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModeloId" Type="Int32" />
+          <Property Name="data" Type="DateTime" Precision="3" />
+          <Property Name="verificado" Type="Boolean" />
+          <Property Name="Texto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Modelo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="caminho" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjetoId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PROJETO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ConfiguracaoID" Type="Int32" Nullable="false" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="agrupamento" Type="Boolean" />
+          <Property Name="exportId" Type="Int32" />
+          <Property Name="utilizarMineracao" Type="Boolean" />
+          <Property Name="arquivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Projeto_Usuario" Relationship="PocOcrDesenvModel.FK__Projeto_U__IdPro__02FC7413" FromRole="PROJETO" ToRole="Projeto_Usuario" />
+          <NavigationProperty Name="PROJETO_MODELO" Relationship="PocOcrDesenvModel.FK_PROJETO" FromRole="PROJETO" ToRole="PROJETO_MODELO" />
+        </EntityType>
+        <EntityType Name="PROJETO_MODELO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PROJETO_ID" Type="Int32" Nullable="false" />
+          <Property Name="MODELO_ID" Type="Int32" Nullable="false" />
+          <Property Name="Padrao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ControleQualidade" Type="Boolean" />
+          <NavigationProperty Name="Modelo" Relationship="PocOcrDesenvModel.FK_MODELO" FromRole="PROJETO_MODELO" ToRole="Modelo" />
+          <NavigationProperty Name="PROJETO" Relationship="PocOcrDesenvModel.FK_PROJETO" FromRole="PROJETO_MODELO" ToRole="PROJETO" />
+          <NavigationProperty Name="Projeto_modelo_evento" Relationship="PocOcrDesenvModel.FK__Projeto_m__IdPro__787EE5A0" FromRole="PROJETO_MODELO" ToRole="Projeto_modelo_evento" />
+          <NavigationProperty Name="Tipo_Regex_Extracao" Relationship="PocOcrDesenvModel.FK__Tipo_Rege__IdPro__7A672E12" FromRole="PROJETO_MODELO" ToRole="Tipo_Regex_Extracao" />
+        </EntityType>
+        <EntityType Name="Projeto_modelo_evento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="DateTime" Precision="0" />
+          <Property Name="IdEvento" Type="Int32" Nullable="false" />
+          <Property Name="IdProjetoModelo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Eventos" Relationship="PocOcrDesenvModel.FK__Projeto_m__IdEve__778AC167" FromRole="Projeto_modelo_evento" ToRole="Eventos" />
+          <NavigationProperty Name="PROJETO_MODELO" Relationship="PocOcrDesenvModel.FK__Projeto_m__IdPro__787EE5A0" FromRole="Projeto_modelo_evento" ToRole="PROJETO_MODELO" />
+        </EntityType>
+        <EntityType Name="Projeto_Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProjeto" Type="Int32" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="data" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PROJETO" Relationship="PocOcrDesenvModel.FK__Projeto_U__IdPro__02FC7413" FromRole="Projeto_Usuario" ToRole="PROJETO" />
+          <NavigationProperty Name="Usuario" Relationship="PocOcrDesenvModel.FK__Projeto_U__IdUsu__03F0984C" FromRole="Projeto_Usuario" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Tipo_Regex_Extracao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoExtracaoId" Type="Int32" Nullable="false" />
+          <Property Name="IdProjetoModelo" Type="Int32" Nullable="false" />
+          <Property Name="IdOrientacaoModelo" Type="Int32" Nullable="false" />
+          <Property Name="ordem" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OrientacaoDocumento" Relationship="PocOcrDesenvModel.FK__Tipo_Rege__IdOri__797309D9" FromRole="Tipo_Regex_Extracao" ToRole="OrientacaoDocumento" />
+          <NavigationProperty Name="PROJETO_MODELO" Relationship="PocOcrDesenvModel.FK__Tipo_Rege__IdPro__7A672E12" FromRole="Tipo_Regex_Extracao" ToRole="PROJETO_MODELO" />
+          <NavigationProperty Name="TipoExtracao" Relationship="PocOcrDesenvModel.FK__Tipo_Rege__TipoE__7B5B524B" FromRole="Tipo_Regex_Extracao" ToRole="TipoExtracao" />
+        </EntityType>
+        <EntityType Name="TipoExtracao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Regex" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Usados" Type="Int32" />
+          <NavigationProperty Name="Tipo_Regex_Extracao" Relationship="PocOcrDesenvModel.FK__Tipo_Rege__TipoE__7B5B524B" FromRole="TipoExtracao" ToRole="Tipo_Regex_Extracao" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="senha" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="PerfilId" Type="Int32" Nullable="false" />
+          <Property Name="Profile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Perfil" Relationship="PocOcrDesenvModel.FK__Usuario__PerfilI__7C4F7684" FromRole="Usuario" ToRole="Perfil" />
+          <NavigationProperty Name="Projeto_Usuario" Relationship="PocOcrDesenvModel.FK__Projeto_U__IdUsu__03F0984C" FromRole="Usuario" ToRole="Projeto_Usuario" />
+        </EntityType>
+        <Association Name="FK__ControleQ__LogOc__1AD3FDA4">
+          <End Type="PocOcrDesenvModel.LogOcr" Role="LogOcr" Multiplicity="0..1" />
+          <End Type="PocOcrDesenvModel.ControleQualidadeLog" Role="ControleQualidadeLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogOcr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ControleQualidadeLog">
+              <PropertyRef Name="LogOcrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__Model__6FE99F9F">
+          <End Type="PocOcrDesenvModel.Modelo" Role="Modelo" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Documento" Role="Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="ModeloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__Palav__70DDC3D8">
+          <End Type="PocOcrDesenvModel.Palavras" Role="Palavras" Multiplicity="0..1" />
+          <End Type="PocOcrDesenvModel.Documento" Role="Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Palavras">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="PalavraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Documento_Palavras">
+          <End Type="PocOcrDesenvModel.Documento" Role="Documento" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Documento" Role="Documento1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Documento">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Documento1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Projeto_m__IdEve__778AC167">
+          <End Type="PocOcrDesenvModel.Eventos" Role="Eventos" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Projeto_modelo_evento" Role="Projeto_modelo_evento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Eventos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Projeto_modelo_evento">
+              <PropertyRef Name="IdEvento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Indice__IdLog__160F4887">
+          <End Type="PocOcrDesenvModel.LogOcr" Role="LogOcr" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Indice" Role="Indice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogOcr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Indice">
+              <PropertyRef Name="IdLog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orientaca__IdMod__72C60C4A">
+          <End Type="PocOcrDesenvModel.Modelo" Role="Modelo" Multiplicity="0..1" />
+          <End Type="PocOcrDesenvModel.OrientacaoDocumento" Role="OrientacaoDocumento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrientacaoDocumento">
+              <PropertyRef Name="IdModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Palavras__IdMode__73BA3083">
+          <End Type="PocOcrDesenvModel.Modelo" Role="Modelo" Multiplicity="0..1" />
+          <End Type="PocOcrDesenvModel.Palavras" Role="Palavras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Palavras">
+              <PropertyRef Name="IdModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PalavrasC__IDMOD__74AE54BC">
+          <End Type="PocOcrDesenvModel.Modelo" Role="Modelo" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.PalavrasCoordenadasDocumento" Role="PalavrasCoordenadasDocumento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PalavrasCoordenadasDocumento">
+              <PropertyRef Name="IDMODELO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MODELO">
+          <End Type="PocOcrDesenvModel.Modelo" Role="Modelo" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.PROJETO_MODELO" Role="PROJETO_MODELO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROJETO_MODELO">
+              <PropertyRef Name="MODELO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tipo_Rege__IdOri__797309D9">
+          <End Type="PocOcrDesenvModel.OrientacaoDocumento" Role="OrientacaoDocumento" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Tipo_Regex_Extracao" Role="Tipo_Regex_Extracao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrientacaoDocumento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tipo_Regex_Extracao">
+              <PropertyRef Name="IdOrientacaoModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__PerfilI__7C4F7684">
+          <End Type="PocOcrDesenvModel.Perfil" Role="Perfil" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="PerfilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Projeto_U__IdPro__02FC7413">
+          <End Type="PocOcrDesenvModel.PROJETO" Role="PROJETO" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Projeto_Usuario" Role="Projeto_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROJETO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Projeto_Usuario">
+              <PropertyRef Name="IdProjeto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROJETO">
+          <End Type="PocOcrDesenvModel.PROJETO" Role="PROJETO" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.PROJETO_MODELO" Role="PROJETO_MODELO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROJETO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROJETO_MODELO">
+              <PropertyRef Name="PROJETO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Projeto_m__IdPro__787EE5A0">
+          <End Type="PocOcrDesenvModel.PROJETO_MODELO" Role="PROJETO_MODELO" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Projeto_modelo_evento" Role="Projeto_modelo_evento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROJETO_MODELO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Projeto_modelo_evento">
+              <PropertyRef Name="IdProjetoModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tipo_Rege__IdPro__7A672E12">
+          <End Type="PocOcrDesenvModel.PROJETO_MODELO" Role="PROJETO_MODELO" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Tipo_Regex_Extracao" Role="Tipo_Regex_Extracao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROJETO_MODELO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tipo_Regex_Extracao">
+              <PropertyRef Name="IdProjetoModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Projeto_U__IdUsu__03F0984C">
+          <End Type="PocOcrDesenvModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Projeto_Usuario" Role="Projeto_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Projeto_Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tipo_Rege__TipoE__7B5B524B">
+          <End Type="PocOcrDesenvModel.TipoExtracao" Role="TipoExtracao" Multiplicity="1" />
+          <End Type="PocOcrDesenvModel.Tipo_Regex_Extracao" Role="Tipo_Regex_Extracao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoExtracao">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tipo_Regex_Extracao">
+              <PropertyRef Name="TipoExtracaoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PocOcrDesenvModelStoreContainer" CdmEntityContainer="Entidade">
+          <EntitySetMapping Name="CONFIGURACAO">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.CONFIGURACAO">
+              <MappingFragment StoreEntitySet="CONFIGURACAO">
+                <ScalarProperty Name="Padrao" ColumnName="Padrao" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ControleQualidadeLog">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.ControleQualidadeLog">
+              <MappingFragment StoreEntitySet="ControleQualidadeLog">
+                <ScalarProperty Name="liberado" ColumnName="liberado" />
+                <ScalarProperty Name="indice" ColumnName="indice" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="LogOcrId" ColumnName="LogOcrId" />
+                <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+                <ScalarProperty Name="exportId" ColumnName="exportId" />
+                <ScalarProperty Name="processado" ColumnName="processado" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="caminho" ColumnName="caminho" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Device">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Device">
+              <MappingFragment StoreEntitySet="Device">
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documento">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Documento">
+              <MappingFragment StoreEntitySet="Documento">
+                <ScalarProperty Name="column_name" ColumnName="column_name" />
+                <ScalarProperty Name="PalavraId" ColumnName="PalavraId" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="NomeDocumento" ColumnName="NomeDocumento" />
+                <ScalarProperty Name="ModeloId" ColumnName="ModeloId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="documentocaptura">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.documentocaptura">
+              <MappingFragment StoreEntitySet="documentocaptura">
+                <ScalarProperty Name="caminhoArquivo" ColumnName="caminhoArquivo" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="lock" ColumnName="lock" />
+                <ScalarProperty Name="ProjetoNome" ColumnName="ProjetoNome" />
+                <ScalarProperty Name="ProjetoId" ColumnName="ProjetoId" />
+                <ScalarProperty Name="caminhoRaiz" ColumnName="caminhoRaiz" />
+                <ScalarProperty Name="caminhoSaida" ColumnName="caminhoSaida" />
+                <ScalarProperty Name="caminhoEntrada" ColumnName="caminhoEntrada" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eventos">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Eventos">
+              <MappingFragment StoreEntitySet="Eventos">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="Evento" ColumnName="Evento" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Export">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Export">
+              <MappingFragment StoreEntitySet="Export">
+                <ScalarProperty Name="Apelido" ColumnName="Apelido" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Indice">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Indice">
+              <MappingFragment StoreEntitySet="Indice">
+                <ScalarProperty Name="IdLog" ColumnName="IdLog" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Indice1" ColumnName="Indice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogOcr">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.LogOcr">
+              <MappingFragment StoreEntitySet="LogOcr">
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="ProjetoId" ColumnName="ProjetoId" />
+                <ScalarProperty Name="Indice" ColumnName="Indice" />
+                <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Motor" ColumnName="Motor" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mensagem">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Mensagem">
+              <MappingFragment StoreEntitySet="Mensagem">
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Lido" ColumnName="Lido" />
+                <ScalarProperty Name="Mensagem1" ColumnName="Mensagem" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modelo">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Modelo">
+              <MappingFragment StoreEntitySet="Modelo">
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ModeloProcessamento">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.ModeloProcessamento">
+              <MappingFragment StoreEntitySet="ModeloProcessamento">
+                <ScalarProperty Name="ProjetoId" ColumnName="ProjetoId" />
+                <ScalarProperty Name="ModeloId" ColumnName="ModeloId" />
+                <ScalarProperty Name="Processar" ColumnName="Processar" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrientacaoDocumento">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.OrientacaoDocumento">
+              <MappingFragment StoreEntitySet="OrientacaoDocumento">
+                <ScalarProperty Name="EspacoBranco" ColumnName="EspacoBranco" />
+                <ScalarProperty Name="PARAMETROENTRADA" ColumnName="PARAMETROENTRADA" />
+                <ScalarProperty Name="Evento" ColumnName="Evento" />
+                <ScalarProperty Name="QrCode" ColumnName="QrCode" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Regex" ColumnName="Regex" />
+                <ScalarProperty Name="SomenteNumeros" ColumnName="SomenteNumeros" />
+                <ScalarProperty Name="Tamanho" ColumnName="Tamanho" />
+                <ScalarProperty Name="Palavra" ColumnName="Palavra" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="IdModelo" ColumnName="IdModelo" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="width" ColumnName="width" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PALAVRA_ORIENTACAO">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.PALAVRA_ORIENTACAO">
+              <MappingFragment StoreEntitySet="PALAVRA_ORIENTACAO">
+                <ScalarProperty Name="IDREGISTRO" ColumnName="IDREGISTRO" />
+                <ScalarProperty Name="IDDOCUMENTO" ColumnName="IDDOCUMENTO" />
+                <ScalarProperty Name="IDORIENTACAO" ColumnName="IDORIENTACAO" />
+                <ScalarProperty Name="IDPALAVRA" ColumnName="IDPALAVRA" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Palavras">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Palavras">
+              <MappingFragment StoreEntitySet="Palavras">
+                <ScalarProperty Name="pagina" ColumnName="pagina" />
+                <ScalarProperty Name="porcentagemmax" ColumnName="porcentagemmax" />
+                <ScalarProperty Name="porcentagemMin" ColumnName="porcentagemMin" />
+                <ScalarProperty Name="GuardarValorIndexacao" ColumnName="GuardarValorIndexacao" />
+                <ScalarProperty Name="QRcode" ColumnName="QRcode" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Ancora" ColumnName="Ancora" />
+                <ScalarProperty Name="Contem" ColumnName="Contem" />
+                <ScalarProperty Name="Palavra" ColumnName="Palavra" />
+                <ScalarProperty Name="IdModelo" ColumnName="IdModelo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PalavrasCoordenadasDocumento">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.PalavrasCoordenadasDocumento">
+              <MappingFragment StoreEntitySet="PalavrasCoordenadasDocumento">
+                <ScalarProperty Name="IDMODELO" ColumnName="IDMODELO" />
+                <ScalarProperty Name="texto" ColumnName="texto" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="width" ColumnName="width" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PARAMETROENTRADA">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.PARAMETROENTRADA">
+              <MappingFragment StoreEntitySet="PARAMETROENTRADA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfil">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Perfil">
+              <MappingFragment StoreEntitySet="Perfil">
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcessarTreinamento">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.ProcessarTreinamento">
+              <MappingFragment StoreEntitySet="ProcessarTreinamento">
+                <ScalarProperty Name="ProjetoId" ColumnName="ProjetoId" />
+                <ScalarProperty Name="caminho" ColumnName="caminho" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Texto" ColumnName="Texto" />
+                <ScalarProperty Name="verificado" ColumnName="verificado" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="ModeloId" ColumnName="ModeloId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROJETO">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.PROJETO">
+              <MappingFragment StoreEntitySet="PROJETO">
+                <ScalarProperty Name="arquivo" ColumnName="arquivo" />
+                <ScalarProperty Name="utilizarMineracao" ColumnName="utilizarMineracao" />
+                <ScalarProperty Name="exportId" ColumnName="exportId" />
+                <ScalarProperty Name="agrupamento" ColumnName="agrupamento" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="ConfiguracaoID" ColumnName="ConfiguracaoID" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROJETO_MODELO">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.PROJETO_MODELO">
+              <MappingFragment StoreEntitySet="PROJETO_MODELO">
+                <ScalarProperty Name="ControleQualidade" ColumnName="ControleQualidade" />
+                <ScalarProperty Name="Padrao" ColumnName="Padrao" />
+                <ScalarProperty Name="MODELO_ID" ColumnName="MODELO_ID" />
+                <ScalarProperty Name="PROJETO_ID" ColumnName="PROJETO_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projeto_modelo_evento">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Projeto_modelo_evento">
+              <MappingFragment StoreEntitySet="Projeto_modelo_evento">
+                <ScalarProperty Name="IdProjetoModelo" ColumnName="IdProjetoModelo" />
+                <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projeto_Usuario">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Projeto_Usuario">
+              <MappingFragment StoreEntitySet="Projeto_Usuario">
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdProjeto" ColumnName="IdProjeto" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Regex_Extracao">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Tipo_Regex_Extracao">
+              <MappingFragment StoreEntitySet="Tipo_Regex_Extracao">
+                <ScalarProperty Name="ordem" ColumnName="ordem" />
+                <ScalarProperty Name="IdOrientacaoModelo" ColumnName="IdOrientacaoModelo" />
+                <ScalarProperty Name="IdProjetoModelo" ColumnName="IdProjetoModelo" />
+                <ScalarProperty Name="TipoExtracaoId" ColumnName="TipoExtracaoId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoExtracao">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.TipoExtracao">
+              <MappingFragment StoreEntitySet="TipoExtracao">
+                <ScalarProperty Name="Usados" ColumnName="Usados" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Regex" ColumnName="Regex" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="PocOcrDesenvModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
