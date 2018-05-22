@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited by Tamas Bojcan -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Hints">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Hint">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="Var">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="ID" type="xs:string" use="optional"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Val" type="xs:string"/>
+									</xs:sequence>
+									<xs:attribute name="Product" type="xs:string" use="optional"/>
+									<xs:attribute name="OS" type="xs:string" use="optional"/>
+									<xs:attribute name="Type" type="xs:string" use="optional"/>
+									<xs:attribute name="Values" type="xs:string" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Name" type="xs:string" use="optional"/>
+						<xs:attribute name="Version" type="xs:string" use="optional"/>
+						<xs:attribute name="Product" type="xs:string" use="optional"/>
+						<xs:attribute name="OS" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
