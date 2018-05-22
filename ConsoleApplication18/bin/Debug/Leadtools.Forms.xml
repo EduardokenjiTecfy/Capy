@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Forms</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Forms.LogicalUnitConverter">
+      <summary>Defines many conversion methods that convert a floating-point number in a specific unit of measurement to its equivalent floating-point value in another unit of measurement.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalUnitConverter.Convert(System.Double,Leadtools.Forms.LogicalUnit,System.Double,Leadtools.Forms.LogicalUnit,System.Double)">
+      <summary>Returns the value of the source value, converted to its equivalent in the specified destination unit of measure.</summary>
+      <param name="sourceValue">The value that is going to be converted.</param>
+      <param name="sourceUnit">The unit of measurement for the source value.</param>
+      <param name="sourceDpi">Represents the DPI of the source value. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationUnit">The unit of measurement for the destination value.</param>
+      <param name="destinationDpi">Represents the DPI of the destination value. This value is only used if the destination unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalUnitConverter.ConvertFromPixels(System.Double,System.Double,Leadtools.Forms.LogicalUnit)">
+      <summary>Returns the value of the source value that is measured in Leadtools.Forms.LogicalUnit.Pixel, converted to its equivalent in the specified destination unit of measure.</summary>
+      <param name="sourceValue">The value that is going to be converted measured in Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="sourceDpi">Represents the DPI of the source value.</param>
+      <param name="destinationUnit">The unit of measurement of the destination value.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalUnitConverter.ConvertToPixels(System.Double,Leadtools.Forms.LogicalUnit,System.Double)">
+      <summary>Returns the value of the source value, converted to its equivalent measurement in Leadtools.Forms.LogicalUnit.Pixel.</summary>
+      <param name="sourceValue">The value that is going to be converted.</param>
+      <param name="sourceUnit">The unit of measurement of the source value.</param>
+      <param name="destinationDpi">Represents the DPI of the destination value.</param>
+    </member>
+    <member name="T:Leadtools.Forms.PageAlignment">
+      <summary>Contains the information needed to align a Master Form (Form Template) page with the filled-in Form page image.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.PageAlignment.#ctor">
+      <summary>Initializes a new instance of PageAlignment.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.PageAlignment.AlignOmrRectangle(Leadtools.Forms.LogicalRectangle)">
+      <summary>Returns a LogicalRectangle that is aligned to the formthat has generated this PageAlignment.</summary>
+      <param name="rectangle">The original LogicalRectangle to align. This LogicalRectangle should be in Master Form coordinates.</param>
+    </member>
+    <member name="M:Leadtools.Forms.PageAlignment.AlignRectangle(Leadtools.Forms.LogicalRectangle)">
+      <summary>Returns a LogicalRectangle that is aligned to the form that has generated this PageAlignment.</summary>
+      <param name="rectangle">The original LogicalRectangle to align. This LogicalRectangle should be in Master Form coordinates.</param>
+    </member>
+    <member name="T:Leadtools.Forms.PageProgressCallbackData">
+      <summary>Data for the PageProgressCallback delegate.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.PageProgressCallbackData.#ctor">
+      <summary>Initializes a new instance of PageProgressCallbackData.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.PageProgressCallbackData.Percentage">
+      <summary>Gets the progress of the current operation, expressed as a percentage.</summary>
+      <value>A value between 0 and 100 that represents the percent completion of the process.</value>
+    </member>
+    <member name="T:Leadtools.Forms.FormProgressCallback(System.Int32,System.Int32,System.Int32)">
+      <summary>Optional delegate method that reports the progress of a specific operation and offers the client an opportunity to cancel.</summary>
+      <param name="currentPage">The 1-based index of the current page.</param>
+      <param name="totalPages">The total number of pages.</param>
+      <param name="percentage">A value between 0 and 100 that represents the percent completion of the process.</param>
+      <returns>true to continue the process, false to cancel the process.</returns>
+    </member>
+    <member name="T:Leadtools.Forms.PageProgressCallback(Leadtools.Forms.PageProgressCallbackData)">
+      <summary>Monitors the progress of the form's page operations.</summary>
+      <param name="data">An instance of the PageProgressCallbackData interface containing the progress callback data.</param>
+    </member>
+    <member name="T:Leadtools.Forms.FormsPageType">
+      <summary>Represents the Page type.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.FormsPageType.Normal">
+      <summary>Normal(General) page from a document, an invoice, or any other type of document that is not specified in any other members of the FormsPageType enumeration.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.FormsPageType.IDCard">
+      <summary>An ID card (For example, Driving License, Identification card, Library card, Passport, etc.)..</summary>
+    </member>
+    <member name="T:Leadtools.Forms.FormsRecognitionMethod">
+      <summary>Represents the Method used for recognition.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.FormsRecognitionMethod.Complex">
+      <summary>Complex Method that takes more time than the Simple Method, but can recognize almost all forms. This method is affected by which FormsTradeoffMode is selected in the Leadtools.Forms.Recognition.PageRecognitionOptions.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.FormsRecognitionMethod.Simple">
+      <summary>Simple method that takes less time than the Complex Method. Although it can recognize most forms passed to it, it cannot recognize forms that contain invoices.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.FormsTradeoffMode">
+      <summary>Represents criteria values to use with the trade-off algorithm for recognition.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.FormsTradeoffMode.Accurate">
+      <summary>Highest accuracy mode. Used to recognize and process forms at any resolution.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.FormsTradeoffMode.Balanced">
+      <summary>High speed. Used to recognize and process forms that have resolutions similar to their master forms with moderate text.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.FormsTradeoffMode.Fast">
+      <summary>Highest speed. Used to recognize and process forms that have resolutions similar to their master forms with abundant text.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.LogicalUnit">
+      <summary>Represents the unit of measure for lengths and positions.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Pixel">
+      <summary>Specifies a device pixel as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Display">
+      <summary>Specifies 1/75 inch as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Document">
+      <summary>Specifies 1/300 inch as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Inch">
+      <summary>Specifies the inch as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Millimeter">
+      <summary>Specifies the millimeter (1/1000 meter) as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Point">
+      <summary>Specifies a printer's point (1/72 inch) as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Feet">
+      <summary>Specifies feet as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Yard">
+      <summary>Specifies the yard as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Micrometer">
+      <summary>Specifies the micrometer (1/1000 millimeter) as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Centimeter">
+      <summary>Specifies the micrometer (1/100 meter) as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Meter">
+      <summary>Specifies the meter as the unit of measure.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalUnit.Twip">
+      <summary>Specifies the twip (TWentIeth of a Point) as the unit of measure.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.LogicalLength">
+      <summary>Stores a floating-point number and a unit of measurement that represents the length.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.#ctor(System.Double)">
+      <summary>Initializes a new LogicalLength class object with explicit parameters.</summary>
+      <param name="value">Specifies the length of the LogicalLength in Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.#ctor(System.Double,Leadtools.Forms.LogicalUnit)">
+      <summary>Initializes a new LogicalLength class object with explicit parameters.</summary>
+      <param name="value">Specifies the length of the LogicalLength.</param>
+      <param name="unit">Specifies the unit of measurement of the LogicalLength.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.-(Leadtools.Forms.LogicalLength,Leadtools.Forms.LogicalLength)">
+      <summary>Subtracts the length of the specified LogicalLength object from this LogicalLength structure.</summary>
+      <param name="left">The LogicalLength on the left side of the subtract operator.</param>
+      <param name="right">The LogicalLength on the right side of the subtract operator.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.!=(Leadtools.Forms.LogicalLength,Leadtools.Forms.LogicalLength)">
+      <summary>Specifies whether this LogicalLength does not contain the same length or unit as the specified Object.</summary>
+      <param name="left">The LogicalLength on the left side of the comparison.</param>
+      <param name="right">The LogicalLength on the right side of the comparison.</param>
+      <returns>true if the two LogicalLength do not have the same length and unit of measurement; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.+(Leadtools.Forms.LogicalLength,Leadtools.Forms.LogicalLength)">
+      <summary>Adds the length of one LogicalLength structure to another LogicalLength structure.</summary>
+      <param name="left">The LogicalLength on the left side of the add operator.</param>
+      <param name="right">The LogicalLength on the right side of the add operator.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.==(Leadtools.Forms.LogicalLength,Leadtools.Forms.LogicalLength)">
+      <summary>Specifies whether this LogicalLength contains the same length and unit as the specified Object.</summary>
+      <param name="left">The LogicalLength on the left side of the comparison.</param>
+      <param name="right">The LogicalLength on the right side of the comparison.</param>
+      <returns>true if the two LogicalLength have the same length and unit of measurement; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.Add(Leadtools.Forms.LogicalLength,Leadtools.Forms.LogicalLength)">
+      <summary>Adds the length of one LogicalLength structure to another LogicalLength structure.</summary>
+      <param name="left">The LogicalLength on the left side of the add operator.</param>
+      <param name="right">The LogicalLength on the right side of the add operator.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.Convert(System.Double,Leadtools.Forms.LogicalUnit,System.Double)">
+      <summary>Converts this LogicalLength structure to the specified unit of measure.</summary>
+      <param name="sourceDpi">Represents the DPI of the source value along the length direction. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationUnit">The unit of measurement of the destination value.</param>
+      <param name="destinationDpi">Represents the DPI of the destination value along the length direction. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.ConvertTo(System.Double,Leadtools.Forms.LogicalUnit,System.Double)">
+      <summary>Returns a new LogicalLength of the current (source) LogicalLength, converted to its equivalent in the specified destination unit of measure.</summary>
+      <param name="sourceDpi">Represents the DPI along the length direction of the source LogicalLength. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationUnit">The unit of measurement of the destination LogicalLength.</param>
+      <param name="destinationDpi">Represents the DPI along the length direction of the destination LogicalLength. This value is only used if the destination unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.Equals(System.Object)">
+      <summary>Specifies whether this LogicalLength contains the same length and unit as the specified Object.</summary>
+      <param name="obj">The object to be used in the comparison with the current object.</param>
+      <returns>true if the % obj% has the same length and unit of measurement of this LogicalLength; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.FromPixels(System.Double)">
+      <summary>Returns a LogicalLength with the specified length measured in Leadtools.Forms.LogicalUnit.Pixel.</summary>
+      <param name="value">The length value that is measured in Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.GetHashCode">
+      <summary>Returns a hash code for this LogicalLength structure. For information about this method, see System.Object.GetHashCode.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.Subtract(Leadtools.Forms.LogicalLength,Leadtools.Forms.LogicalLength)">
+      <summary>Subtracts the length of the specified LogicalLength object from this LogicalLength structure.</summary>
+      <param name="left">The LogicalLength on the left side of the subtraction operator.</param>
+      <param name="right">The LogicalLength on the right side of the subtraction operator.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.ToPixels(System.Double)">
+      <summary>Returns the length value in pixels according to the specified DPIs.</summary>
+      <param name="dpi">Represents the DPI of the image along the length direction.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalLength.ToString">
+      <summary>Converts this LogicalLength to a human-readable string.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalLength.IsEmpty">
+      <summary>Gets a value indicating whether this LogicalLength structure is empty.</summary>
+      <value>true if this LogicalLength structure is empty; false, otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalLength.Unit">
+      <summary>Gets or sets a value that represents the unit of measurement for this LogicalLength.</summary>
+      <value>Unit of measurement</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalLength.Value">
+      <summary>Gets or sets a value that represents the length for this LogicalLength.</summary>
+      <value>Value that indicates the length.</value>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalLength.Empty">
+      <summary>Represents a new instance of the LogicalLength with uninitialized members.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.LogicalPoint">
+      <summary>Stores two floating-point numbers and a unit of measurement that represent the coordinates of a point (X and Y).</summary>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.#ctor(System.Double,System.Double,Leadtools.Forms.LogicalUnit)">
+      <summary>Initializes a new LogicalPoint class object with explicit parameters.</summary>
+      <param name="x">Specifies the X-coordinate of the LogicalPoint.</param>
+      <param name="y">Specifies the Y-coordinate of the LogicalPoint.</param>
+      <param name="unit">Specifies the unit of measurement of the LogicalPoint.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.#ctor(Leadtools.LeadPoint)">
+      <summary>Initializes a new LogicalPoint class object with explicit parameters.</summary>
+      <param name="point">Specifies the LogicalPoint coordinates measured in Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.-(Leadtools.Forms.LogicalPoint,Leadtools.Forms.LogicalSize)">
+      <summary>Returns a LogicalPoint that results from subtracting the width and height of a LogicalSize structure from the X and Y coordinates of the LogicalPoint structure, respectively.</summary>
+      <param name="point">Specifies the LogicalPoint.</param>
+      <param name="size">Specifies the LogicalSize.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.!=(Leadtools.Forms.LogicalPoint,Leadtools.Forms.LogicalPoint)">
+      <summary>Specifies whether this LogicalPoint does not contain the same coordinates or unit as the specified Object.</summary>
+      <param name="left">The first LogicalPoint on the left side of the comparison operator.</param>
+      <param name="right">The second LogicalPoint on the right side of the comparison operator.</param>
+      <returns>true if the two LogicalLength do not have the same coordinates and unit of measurement; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.+(Leadtools.Forms.LogicalPoint,Leadtools.Forms.LogicalSize)">
+      <summary>Returns a LogicalPoint that results from adding the width and height of a LogicalSize structure to the X and Y coordinates of the LogicalPoint structure, respectively.</summary>
+      <param name="point">Specifies the LogicalPoint.</param>
+      <param name="size">Specifies the LogicalSize.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.==(Leadtools.Forms.LogicalPoint,Leadtools.Forms.LogicalPoint)">
+      <summary>Specifies whether this LogicalPoint contains the same coordinates and unit as the specified Object.</summary>
+      <param name="left">The first LogicalPoint on the left side of the comparison operator.</param>
+      <param name="right">The second LogicalPoint on the right side of the comparison operator.</param>
+      <returns>true if the two LogicalPoint have the same coordinates and unit of measurement; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.Add(Leadtools.Forms.LogicalPoint,Leadtools.Forms.LogicalSize)">
+      <summary>Returns a LogicalPoint that results from adding the width and height of LogicalSize structure to the X and Y coordinates of the LogicalPoint structure, respectively.</summary>
+      <param name="point">Specifies the LogicalPoint.</param>
+      <param name="size">Specifies the LogicalSize.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.Convert(System.Double,System.Double,Leadtools.Forms.LogicalUnit,System.Double,System.Double)">
+      <summary>Converts this LogicalPoint structure to the specified unit of measure.</summary>
+      <param name="sourceDpiX">Represents the DPI of the source value along the x-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="sourceDpiY">Represents the DPI of the source value along the y-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationUnit">The unit of measurement of the destination value.</param>
+      <param name="destinationDpiX">Represents the DPI of the destination value along the x-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationDpiY">Represents the DPI of the destination value along the y-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.ConvertTo(System.Double,System.Double,Leadtools.Forms.LogicalUnit,System.Double,System.Double)">
+      <summary>Returns this LogicalPoint structure, converted to its equivalent in the specified destination unit of measure.</summary>
+      <param name="sourceDpiX">Represents the DPI of the source value along the x-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="sourceDpiY">Represents the DPI of the source value along the y-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationUnit">The unit of measurement of the destination value.</param>
+      <param name="destinationDpiX">Represents the DPI of the destination value along the x-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationDpiY">Represents the DPI of the destination value along the y-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.Equals(System.Object)">
+      <summary>Specifies whether this LogicalSize contains the same coordinates and unit of measurement as the specified Object.</summary>
+      <param name="obj">The object to be used in the comparison with the current object.</param>
+      <returns>true if the two LogicalPoint have the same coordinates and unit of measurement; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.FromPoint(Leadtools.LeadPoint)">
+      <summary>Creates a new LogicalPoint class object from explicit Leadtools.LeadPoint parameters.</summary>
+      <param name="point">Specifies the LogicalPoint coordinates measured in Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.GetHashCode">
+      <summary>Returns a hash code for this LogicalPoint structure. For information about this method, see System.Object.GetHashCode.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.Subtract(Leadtools.Forms.LogicalPoint,Leadtools.Forms.LogicalSize)">
+      <summary>Returns a LogicalPoint that results from subtracting the width and height of a LogicalSize structure from the X and Y coordinates of the LogicalPoint structure, respectively.</summary>
+      <param name="point">Specifies the LogicalPoint.</param>
+      <param name="size">Specifies the LogicalSize.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.ToPoint(System.Double,System.Double)">
+      <summary>Returns the Leadtools.LeadPoint of the LogicalPoint, converted to its equivalent values measured in Leadtools.Forms.LogicalUnit.Pixel.</summary>
+      <param name="dpiX">Represents the DPI along the x-axis of the output Leadtools.LeadPoint.</param>
+      <param name="dpiY">Represents the DPI along the y-axis of the output Leadtools.LeadPoint.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalPoint.ToString">
+      <summary>Converts this LogicalPoint to a human-readable string.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalPoint.IsEmpty">
+      <summary>Gets a value indicating whether this LogicalPoint structure is empty.</summary>
+      <value>true if this LogicalPoint structure is empty; false, otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalPoint.Unit">
+      <summary>Gets or sets a value that represents the unit of measure for this LogicalPoint.</summary>
+      <value>Unit of measurement</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalPoint.X">
+      <summary>Gets or sets a value that represents the X coordinate for this LogicalPoint.</summary>
+      <value>The x-coordinate of this LogicalPoint.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalPoint.Y">
+      <summary>Gets or sets a value that represents the Y coordinate for this LogicalPoint.</summary>
+      <value>The y-coordinate of this LogicalPoint.</value>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalPoint.Empty">
+      <summary>Represents a new instance of the LogicalPoint with uninitialized members.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.LogicalRectangle">
+      <summary>Stores four floating-point numbers and a unit of measurement that represent the coordinates and size of a rectangle (X, Y, Width, and Height).</summary>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.#ctor(System.Double,System.Double,System.Double,System.Double,Leadtools.Forms.LogicalUnit)">
+      <summary>Initializes a new instance of the LogicalRectangle class with the specified location, size, and unit.</summary>
+      <param name="x">The x-coordinate of the upper-left corner of the LogicalRectangle.</param>
+      <param name="y">The y-coordinate of the upper-left corner of the LogicalRectangle.</param>
+      <param name="width">The width of the LogicalRectangle.</param>
+      <param name="height">The height of the LogicalRectangle.</param>
+      <param name="unit">Specifies the unit of measurement of the LogicalRectangle.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.#ctor(Leadtools.LeadRect)">
+      <summary>Initializes a new instance of the LogicalRectangle class with the specified rect.</summary>
+      <param name="rect">The location and size of the rectangle measured in Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.#ctor(Leadtools.Forms.LogicalPoint,Leadtools.Forms.LogicalSize)">
+      <summary>Initializes a new instance of the LogicalRectangle class with the specified location and size.</summary>
+      <param name="location">The coordinates of the upper-left corner of the rectangle.</param>
+      <param name="size">The width and height of the rectangle.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.!=(Leadtools.Forms.LogicalRectangle,Leadtools.Forms.LogicalRectangle)">
+      <summary>Specifies whether this LogicalRectangle does not contain the same location, size, or unit as the specified Object.</summary>
+      <param name="left">The first LogicalRectangle on the left side of the comparison operator.</param>
+      <param name="right">The second LogicalRectangle on the right side of the comparison operator.</param>
+      <returns>true if the two LogicalRectangle do not have the same location, size, and unit of measurement; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.==(Leadtools.Forms.LogicalRectangle,Leadtools.Forms.LogicalRectangle)">
+      <summary>Specifies whether this LogicalRectangle contains the same location, size, and unit as the specified Object.</summary>
+      <param name="left">The first LogicalRectangle on the left side of the comparison operator.</param>
+      <param name="right">The second LogicalRectangle on the right side of the comparison operator.</param>
+      <returns>true if the two LogicalRectangle have the same location, size, and unit of measurement; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Contains(System.Double,System.Double)">
+      <summary>Determines whether the specified point is contained within this LogicalRectangle structure.</summary>
+      <param name="x">The x-coordinate of the point to test. It shold be in the same unit of measurement</param>
+      <param name="y">The y-coordinate of the point to test. It shold be in the same unit of measurement</param>
+      <returns>true if the specified point is contained within this LogicalRectangle; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Contains(Leadtools.LeadPoint)">
+      <summary>Determines if the specified point is contained within this LogicalRectangle structure.</summary>
+      <param name="pt">The Leadtools.LeadPoint structure to be tested.</param>
+      <returns>This method returns true if the point represented by the *pt* parameter is contained within this LogicalRectangle structure; otherwise false.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Contains(Leadtools.LeadRect)">
+      <summary>Determines if the rectangular region represented by *rect* is entirely contained within this LogicalRectangle structure.</summary>
+      <param name="rect">The Leadtools.LeadRect structure to be tested.</param>
+      <returns>This method returns true if the rectangular region represented by *rect* is entirely contained within the rectangular region represented by this LogicalRectangle; otherwise false.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Contains(Leadtools.Forms.LogicalPoint)">
+      <summary>Determines if the specified point is contained within this LogicalPoint structure.</summary>
+      <param name="pt">The LogicalPoint structure to be tested.</param>
+      <returns>This method returns true if the point represented by the *pt* parameter is contained within this LogicalPoint structure; otherwise false.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Contains(Leadtools.Forms.LogicalRectangle)">
+      <summary>Determines if the rectangular region represented by *rect* is entirely contained within this LogicalRectangle structure.</summary>
+      <param name="rect">The LogicalRectangle structure to be tested.</param>
+      <returns>This method returns true if the rectangular region represented by *rect* is entirely contained within the rectangular region represented by this LogicalRectangle; otherwise false.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Convert(System.Double,System.Double,Leadtools.Forms.LogicalUnit,System.Double,System.Double)">
+      <summary>Returns this LogicalRectangle structure, converted to its equivalent in the specified destination unit of measure.</summary>
+      <param name="sourceDpiX">Represents the DPI of the source value along the x-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="sourceDpiY">Represents the DPI of the source value along the y-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationUnit">The unit of measurement of the destination value.</param>
+      <param name="destinationDpiX">Represents the DPI of the destination value along the x-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationDpiY">Represents the DPI of the destination value along the y-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.ConvertTo(System.Double,System.Double,Leadtools.Forms.LogicalUnit,System.Double,System.Double)">
+      <summary>Returns this LogicalRectangle structure, converted to its equivalent in the specified destination unit of measure.</summary>
+      <param name="sourceDpiX">Represents the DPI of the source value along the x-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="sourceDpiY">Represents the DPI of the source value along the y-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationUnit">The unit of measurement of the destination value.</param>
+      <param name="destinationDpiX">Represents the DPI of the destination value along the x-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationDpiY">Represents the DPI of the destination value along the y-axis. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Equals(System.Object)">
+      <summary>Determines whether the specified object equals this LogicalRectangle object.</summary>
+      <param name="obj">The System.Object to test.</param>
+      <returns>true if the two LogicalRectangle have the same location, size, and unit of measurement; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.FromLTRB(System.Double,System.Double,System.Double,System.Double,Leadtools.Forms.LogicalUnit)">
+      <summary>Returns a LogicalRectangle structure with the specified edge locations and unit of measure.</summary>
+      <param name="left">The x-coordinate of the upper-left corner of the LogicalRectangle.</param>
+      <param name="top">The y-coordinate of the upper-left corner of the LogicalRectangle.</param>
+      <param name="right">The x-coordinate of the lower-right corner of the LogicalRectangle.</param>
+      <param name="bottom">The y-coordinate of the lower-right corner of the LogicalRectangle.</param>
+      <param name="unit">Specifies the unit of measurement of the LogicalRectangle.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.FromRectangle(Leadtools.LeadRect)">
+      <summary>Returns a LogicalRectangle structure with the specified Leadtools.LeadRect in Leadtools.Forms.LogicalUnit.Pixel.</summary>
+      <param name="rect">A Leadtools.LeadRect that specifies the location and size of the LogicalRectangle in Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.GetHashCode">
+      <summary>Returns the hash code for this LogicalRectangle structure.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Inflate(System.Double,System.Double)">
+      <summary>Inflates a LogicalRectangle structure by the specified amount.</summary>
+      <param name="x">The amount to inflate this LogicalRectangle horizontally.</param>
+      <param name="y">The amount to inflate this LogicalRectangle vertically.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Inflate(Leadtools.Forms.LogicalRectangle,System.Double,System.Double)">
+      <summary>Creates and returns an inflated copy of the specified LogicalRectangle structure. The copy is inflated by the specified amount. The original rectangle remains unmodified.</summary>
+      <param name="rect">The LogicalRectangle to be copied. This rectangle is not modified.</param>
+      <param name="x">The amount to inflate the copy of the rectangle along the x-axis.</param>
+      <param name="y">The amount to inflate the copy of the rectangle along the y-axis.</param>
+      <returns>The inflated LogicalRectangle structure.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Inflate(Leadtools.Forms.LogicalSize)">
+      <summary>Inflates this LogicalRectangle structure by the specified amount.</summary>
+      <param name="size">The amount to inflate this rectangle.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Intersect(Leadtools.LeadRect)">
+      <summary>Determines the LogicalRectangle structure that represents the intersection of two rectangles.</summary>
+      <param name="rect">The LogicalRectangle with which to intersect.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Intersect(Leadtools.Forms.LogicalRectangle)">
+      <summary>Replaces this LogicalRectangle structure with the intersection of itself and the specified LogicalRectangle structure.</summary>
+      <param name="rect">The rectangle to intersect.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Intersect(Leadtools.Forms.LogicalRectangle,Leadtools.Forms.LogicalRectangle)">
+      <summary>Returns an LogicalRectangle structure that represents the intersection of two rectangles. If there is no intersection, an empty rectangle is returned.</summary>
+      <param name="rect1">A rectangle to intersect.</param>
+      <param name="rect2">A rectangle to intersect</param>
+      <returns>A third LogicalRectangle structure the size of which represents the overlapped area of the two specified rectangles.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.IntersectsWith(Leadtools.LeadRect)">
+      <summary>Determines whether this rectangle intersects with rect.</summary>
+      <param name="rect">The rectangle to test.</param>
+      <returns>true if the \rect\ intersects with this LogicalRectangle; false, otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.IntersectsWith(Leadtools.Forms.LogicalRectangle)">
+      <summary>Determines if this rectangle intersects with a test rectangle.</summary>
+      <param name="rect">The rectangle to test.</param>
+      <returns>This method returns true if there is any intersection; false otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Offset(System.Double,System.Double)">
+      <summary>Adjusts the location of this rectangle by the specified amounts.</summary>
+      <param name="x">The amount to offset the location horizontally.</param>
+      <param name="y">The amount to offset the location vertically.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Offset(Leadtools.LeadPoint)">
+      <summary>Adjusts the location of this LogicalRectangle by the specified amount.</summary>
+      <param name="pos">Amount to offset the location.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Offset(Leadtools.Forms.LogicalPoint)">
+      <summary>Adjusts the location of this rectangle by the specified amount.</summary>
+      <param name="pt">The amount to offset the location.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.ToRectangle(System.Double,System.Double)">
+      <summary>Returns a Leadtools.LeadRect that represents this LogicalRectangle structure, converted to its equivalent in Leadtools.Forms.LogicalUnit.Pixel.</summary>
+      <param name="dpiX">Represents the DPI along the x-axis.</param>
+      <param name="dpiY">Represents the DPI along the y-axis.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.ToString">
+      <summary>Converts the attributes of this LogicalRectangle to a human-readable string.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalRectangle.Union(Leadtools.Forms.LogicalRectangle,Leadtools.Forms.LogicalRectangle)">
+      <summary>Gets a Rectangle structure that contains the union of two Rectangle structures.</summary>
+      <param name="rect1">A rectangle to union.</param>
+      <param name="rect2">A rectangle to union.</param>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.Bottom">
+      <summary>Gets the y-coordinate that is the sum of the Y and Height property values of this LogicalRectangle structure.</summary>
+      <value>The bottom edge of this LogicalRectangle.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.Height">
+      <summary>Gets or sets the height of this LogicalRectangle structure.</summary>
+      <value>Value that indicates the height of the rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.IsEmpty">
+      <summary>Tests whether all numeric properties of this LogicalRectangle have values of zero.</summary>
+      <value>true if this LogicalRectangle structure is empty; false, otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.Left">
+      <summary>Gets the x-coordinate of the left edge of this LogicalRectangle structure.</summary>
+      <value>The left edge of this LogicalRectangle.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.Location">
+      <summary>Gets or sets the coordinates of the upper-left corner of this LogicalRectangle structure.</summary>
+      <value>The upper-left corner coordinates of this LogicalRectangle.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.Right">
+      <summary>Gets the x-coordinate that is the sum of the X and the Width property values of this LogicalRectangle structure.</summary>
+      <value>The right edge of this LogicalRectangle.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.Size">
+      <summary>Gets or sets the size of this LogicalRectangle.</summary>
+      <value>The width and height of this LogicalRectangle.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.Top">
+      <summary>Gets the y-coordinate of the top edge of this LogicalRectangle structure.</summary>
+      <value>The top edge of this LogicalRectangle.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.Unit">
+      <summary>Gets or sets a value that represents the unit of measure for this LogicalRectangle.</summary>
+      <value>Unit of measurement</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.Width">
+      <summary>Gets or sets the width of this LogicalRectangle structure.</summary>
+      <value>Value that indicates the width of the rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.X">
+      <summary>Gets or sets the x-coordinate of the upper-left corner of this LogicalRectangle structure.</summary>
+      <value>The x-coordinate of this LogicalRectangle.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalRectangle.Y">
+      <summary>Gets or sets the y-coordinate of the upper-left corner of this LogicalRectangle structure.</summary>
+      <value>The y-coordinate of this LogicalRectangle.</value>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalRectangle.Empty">
+      <summary>Represents a new instance of the LogicalRectangle with uninitialized members.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.LogicalSize">
+      <summary>Stores two floating-point numbers and a unit of measurement that represents the size (Width and Height).</summary>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.#ctor(System.Double,System.Double,Leadtools.Forms.LogicalUnit)">
+      <summary>Initializes a new LogicalSize class object with explicit parameters.</summary>
+      <param name="width">Specifies the width of the LogicalSize.</param>
+      <param name="height">Specifies the height of the LogicalSize.</param>
+      <param name="unit">Specifies the unit of measurement of the LogicalSize.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.#ctor(Leadtools.LeadSize)">
+      <summary>Initializes a new LogicalSize class object with explicit Leadtools.LeadSize parameters.</summary>
+      <param name="size">Specifies the LogicalSize width and height values measured in Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.#ctor(Leadtools.Forms.LogicalPoint)">
+      <summary>Initializes a new LogicalSize class object with explicit LogicalPoint parameters.</summary>
+      <param name="pt">LogicalPoint specifies the width, height, and the unit of measurement of the LogicalSize through its X-componenet, Y-component, and LogicalUnit, respectively.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.-(Leadtools.Forms.LogicalSize,Leadtools.Forms.LogicalSize)">
+      <summary>Subtracts the width and height of the specified LogicalSize object from this LogicalSize structure.</summary>
+      <param name="size1">The first LogicalSize on the left side of the subtraction operator.</param>
+      <param name="size2">The second LogicalSize on the right side of the subtraction operator.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.!=(Leadtools.Forms.LogicalSize,Leadtools.Forms.LogicalSize)">
+      <summary>Specifies whether this LogicalSize does not contain the same width, height, or unit as the specified Object.</summary>
+      <param name="size1">The first LogicalSize to be used in the comparison.</param>
+      <param name="size2">The second LogicalSize to be used in the comparison.</param>
+      <returns>true if the two LogicalSize do not have the same width, height, and unit of measurement; otherwise, false.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.+(Leadtools.Forms.LogicalSize,Leadtools.Forms.LogicalSize)">
+      <summary>Adds the width and height of the specified LogicalSize object to this LogicalSize structure.</summary>
+      <param name="size1">The first LogicalSize being added.</param>
+      <param name="size2">The second LogicalSize being added.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.==(Leadtools.Forms.LogicalSize,Leadtools.Forms.LogicalSize)">
+      <summary>Specifies whether this LogicalSize contains the same width, height, and unit as the specified Object.</summary>
+      <param name="size1">The first LogicalSize to be used in the comparison.</param>
+      <param name="size2">The second LogicalSize to be used in the comparison.</param>
+      <returns>true if the two LogicalSize have the same width, height, and unit of measurement; otherwise, false.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.Add(Leadtools.Forms.LogicalSize,Leadtools.Forms.LogicalSize)">
+      <summary>Adds the width and height of one LogicalSize structure to another LogicalSize structure.</summary>
+      <param name="size1">The first LogicalSize being added.</param>
+      <param name="size2">The second LogicalSize being added.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.Convert(System.Double,System.Double,Leadtools.Forms.LogicalUnit,System.Double,System.Double)">
+      <summary>Converts this LogicalSize structure to the specified unit of measure.</summary>
+      <param name="sourceDpiX">Represents the DPI of the source value along the x-axis (width). This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="sourceDpiY">Represents the DPI of the source value along the y-axis (height). This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationUnit">The unit of measurement of the destination value.</param>
+      <param name="destinationDpiX">Represents the DPI of the destination value along the x-axis (width). This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationDpiY">Represents the DPI of the destination value along the x-axis (width). This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.ConvertTo(System.Double,System.Double,Leadtools.Forms.LogicalUnit,System.Double,System.Double)">
+      <summary>Returns a new LogicalSize in the specified destination unit of measure that is the equivalent of the current (source) LogicalSize.</summary>
+      <param name="sourceDpiX">Represents the DPI along the x-axis (Width) of the source LogicalSize. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel</param>
+      <param name="sourceDpiY">Represents the DPI along the y-axis (Height) of the source LogicalSize. This value is only used if the source unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationUnit">The unit of measurement of the destination LogicalSize.</param>
+      <param name="destinationDpiX">Represents the DPI along the x-axis (Width) of the destination LogicalSize. This value is only used if the destination unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <param name="destinationDpiY">Represents the DPI along the y-axis (Height) of the destination LogicalSize. This value is only used if the destination unit of measure is Leadtools.Forms.LogicalUnit.Pixel.</param>
+      <returns>A new LogicalSize in the specified destination unit of measure that is the equivalent of the current (source) LogicalSize.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.Equals(System.Object)">
+      <summary>Specifies whether this LogicalSize contains the same width, height and unit as the specified Object.</summary>
+      <param name="obj">The object to be used in the comparison with the current object.</param>
+      <returns>true if the \obj\ has the same width, height, and unit of measurement of this LogicalSize; otherwise, false.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.explicit(Leadtools.Forms.LogicalSize)">
+      <summary>Returns a LogicalPoint containing the following LogicalSize properties: width, height, and unit in its x, y, and unit, respectively.</summary>
+      <param name="size">The LogicalSize object to be converted.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.FromSize(Leadtools.LeadSize)">
+      <summary>Creates a new LogicalSize class object from explicit Leadtools.LeadSize parameters.</summary>
+      <param name="size">Specifies the LogicalSize width and height values measured in Leadtools.Forms.LogicalUnit.Pixel.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.GetHashCode">
+      <summary>Returns a hash code for this LogicalSize structure. For information about this method, see System.Object.GetHashCode.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.Subtract(Leadtools.Forms.LogicalSize,Leadtools.Forms.LogicalSize)">
+      <summary>Subtracts the width and height of one LogicalSize structure from another LogicalSize structure.</summary>
+      <param name="size1">The first LogicalSize on the left side of the subtraction operator.</param>
+      <param name="size2">The second LogicalSize on the right side of the subtraction operator.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.ToLogicalPoint">
+      <summary>Returns a logical point with the Width as its X-component, the Height as its Y-component, and the unit of measurement.</summary>
+      <returns>A logical point with the Width as its X-component, the Height as its Y-component, and the unit of measurement.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.ToSize(System.Double,System.Double)">
+      <summary>Returns the Leadtools.LeadSize of the LogicalSize, converted to its equivalent values measured in Leadtools.Forms.LogicalUnit.Pixel.</summary>
+      <param name="dpiX">Represents the DPI along the x-axis (Width) of the output Leadtools.LeadSize.</param>
+      <param name="dpiY">Represents the DPI along the y-axis (Height) of the output Leadtools.LeadSize.</param>
+    </member>
+    <member name="M:Leadtools.Forms.LogicalSize.ToString">
+      <summary>Converts this LogicalSize to a human-readable string.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalSize.Height">
+      <summary>Gets or sets a value that represents the height for this LogicalSize.</summary>
+      <value>Value that indicates the height of the size.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalSize.IsEmpty">
+      <summary>Gets a value indicating whether this LogicalSize structure is empty.</summary>
+      <value>true if this LogicalSize structure is empty; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalSize.Unit">
+      <summary>Gets or sets a value that represents the unit of measure for this LogicalSize.</summary>
+      <value>The unit of measurement.</value>
+    </member>
+    <member name="P:Leadtools.Forms.LogicalSize.Width">
+      <summary>Gets or sets a value that represents the width for this LogicalSize.</summary>
+      <value>Value that indicates the width of the size.</value>
+    </member>
+    <member name="F:Leadtools.Forms.LogicalSize.Empty">
+      <summary>Represents a new instance of the LogicalSize with uninitialized members.</summary>
+    </member>
+  </members>
+</doc>

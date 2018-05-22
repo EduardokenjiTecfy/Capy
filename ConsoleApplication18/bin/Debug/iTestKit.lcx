@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<License xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://licensing.nuance.com/eCopyLicenseFileSchema.xsd">
+  <General Version="1.0" />
+  <Customer>
+    <CustID>3939</CustID>
+    <CustName>Nuance</CustName>
+    <CustCompany>Nuance</CustCompany>
+  </Customer>
+  <Products>
+    <Product>
+      <DisplayName>ITest</DisplayName>
+      <SKU>E476A-XT0-5.0-M</SKU>
+      <SerialNumber Activated="2015-04-11">AB3B4-331-3XC2-HWMG-IT</SerialNumber>
+      <Type>Permanent</Type>
+      <Lifetime>180</Lifetime>
+      <Features>
+        <Feature Name="ITest" Filter="1=1" />
+      </Features>
+      <Version>20.0</Version>
+    </Product>
+  </Products>
+  <Security>
+    <NodeID>jum-29];*</NodeID>
+    <FailoverNodeID />
+  </Security>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <DigestValue>ji251W6WM/ACuA/eRVnvIN7m000=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>CDpXb2vqgeytkgAbfV7jokX2bPbgyjhr2cp5/kwy9ntAyB4+Y9F8WGJ6tTnduGwn/FRJKDd0T30DAOwcdt5/pYyH6SwDEiSn6GyrJFTxHG6+laOV034lQtNacQ5nwi5ljt/1NJHDY7PyZGiQQFg1nGVXcC2HD/vivyWdZqqYsyY=</SignatureValue>
+    <Object>{B365F4CD-0763-387A-84E5-55ABC551E088}</Object>
+  </Signature>
+</License>
